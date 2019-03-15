@@ -27,65 +27,16 @@
                 <i class="menu-icon mdi mdi-television" style="color: #3c8dbc"></i> <span>&ensp;Dashboard</span>
             </a>
         </li>
-		<li class="<?php if ($this->uri->segment(1)==='Goods'){
 
+
+		<li class="<?php if ($this->uri->segment(1)==='Mahasiswa'){
 			echo 'active';
 		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>Goods" >
-				<i class="menu-icon fa fa-leaf" style="color: #3c8dbc"></i> <span>&ensp;Goods</span>
-			</a>
-		</li>
-		<li class="<?php if ($this->uri->segment(1)==='Receipt'){
-			echo 'active';
-		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>Receipt" >
-				<i class="menu-icon fa fa-file-text" style="color: #3c8dbc"></i> <span>&ensp;Receipt</span>
-			</a>
-		</li>
-        <li class="<?php if ($this->uri->segment(1)==='Po'){
-            echo 'active';
-        }?> nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>Po" >
-                <i class="menu-icon fa fa-file-photo-o" style="color: #3c8dbc"></i> <span>&ensp;PO</span>
-            </a>
-        </li>
-        <li class="<?php if ($this->uri->segment(1)==='Shop'){
-            echo 'active';
-        }?> nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>Shop" >
-                <i class="menu-icon fa fa-shopping-cart" style="color: #3c8dbc"></i> <span>&ensp;Shop</span>
-            </a>
-        </li>
-		<li class="<?php if ($this->uri->segment(1)==='ShopReference'){
-			echo 'active';
-		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>ShopReference" >
-				<i class="menu-icon fa fa-thumbs-o-up" style="color: #3c8dbc"></i> <span>&ensp;Shop Reference</span>
+			<a class="nav-link" href="<?php echo base_url()?>Mahasiswa" >
+				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Mahasiswa</span>
 			</a>
 		</li>
 
-        <li class="<?php if ($this->uri->segment(1)==='Inventory'){
-            echo 'active';
-        }?> nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>Inventory" >
-                <i class="menu-icon fa fa-briefcase" style="color: #3c8dbc"></i> <span>&ensp;Inventory</span>
-            </a>
-        </li>
-        <li class="<?php if ($this->uri->segment(1)==='Production'){
-            echo 'active';
-        }?> nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>Production" >
-                <i class="menu-icon fa fa-magic" style="color: #3c8dbc"></i> <span>&ensp;Production</span>
-            </a>
-        </li>
-
-        <li class="<?php if ($this->uri->segment(1)==='User'){
-            echo 'active';
-        }?> nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>User" >
-                <i class="menu-icon fa fa-user-circle" style="color: #3c8dbc"></i> <span>&ensp;User</span>
-            </a>
-        </li>
     </ul>
 </nav>
 <!-- partial -->

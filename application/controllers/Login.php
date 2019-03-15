@@ -15,36 +15,21 @@
 
         public function login(){
             $username = $_POST['username'];
-            $password = md5($_POST['password']);
+            $password = $_POST['password'];
             $response = $this->Login_model->login($username, $password);
-
             //Saving Session
             if(count($response) > 0){
 				$loginData2 = array(
 					"username" => $response[0]['username'],
 					"level" => $response[0]['level'],
-					"idUser" => $response[0]['idUsers']
+					"idUser" => $response[0]['id']
 				);
 				$this->session->set_userdata($loginData2);
-
-				//updateLastLogin
-				$last = array(
-					'lastLogin' => date("Y-m-d h:i:sa")
-				);
-
-				$response2 = $this->Login_model->lastLogin($response[0]['idUsers'], $last);
-
-				if($response2 > 0){
-					echo "Ok";
-				}else{
-					echo "Failed";
-				}
-
+				echo "Ok";
             }else{
                 echo "Failed";
             }
         }
-
 
         public function Logout(){
 			$this->session->sess_destroy();

@@ -21,10 +21,6 @@ class User extends CI_Controller
 		if(!empty($username)){
             $data = array('isi' => 'pages/page_user', 'title' => 'MUR SCM');
             $this->load->view('layout/wrapper',$data);
-			// show data
-//			$data['list_goods'] = $this->Goods_model->getAll();
-//			echo json_encode($data);
-			//Ajie's task
 		}else{
             $this->load->view('pages/page_login');
 			//Ajie's task
@@ -42,9 +38,9 @@ class User extends CI_Controller
 			$row[] = $no;
 			$row[] = $field->username;
 			$row[] = $field->level;
-			$row[] = $field->lastLogin;
-			$row[] = '<button onclick="getOne(\'' . $field->idUsers . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteUser(\'' . $field->idUsers . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+			$row[] = $field->createdAt;
+			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
+				'<button onclick="deleteUser(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 

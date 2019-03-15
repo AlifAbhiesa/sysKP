@@ -6,12 +6,11 @@
  * Time: 13.55
  */
 
-class Users_model extends CI_Model
+class Mahasiswa_model extends CI_Model
 {
 
-	var $table = 'login'; //nama tabel dari database
-	var $column_order = array('null','username','level','createdAt'); //field yang ada di table user
-	var $column_search = array('username'); //field yang diizin untuk pencarian
+	var $table = 'mahasiswa'; //nama tabel dari database
+	var $column_search = array('nama'); //field yang diizin untuk pencarian
 	var $order = array('id' => 'DESC'); // default order
 
 	public function __construct()
@@ -65,7 +64,6 @@ class Users_model extends CI_Model
 		$this->_get_datatables_query();
 		if($_POST['length'] != -1)
 			$this->db->limit($_POST['length'], $_POST['start']);
-		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -73,7 +71,6 @@ class Users_model extends CI_Model
 	function count_filtered()
 	{
 		$this->_get_datatables_query();
-		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -84,47 +81,7 @@ class Users_model extends CI_Model
 		return $this->db->count_all_results();
 	}
 
-	//CRUD function
 
-	public function getOne($id){
-		$this->db->select('*');
-		$this->db->from('users');
-		$this->db->where(array('active' => 'Y','idUsers' => $id));
-		return $this->db->get()->result_array();
-	}
-
-	public function saveData($data){
-		$this->db->insert('users',$data);
-		return $this->db->affected_rows();
-	}
-
-	public function updateData($id,$data){
-		$this->db->where('idUsers', $id);
-		$this->db->update('users', $data);
-		return $this->db->affected_rows();
-	}
-
-	public function deleteData($id,$data){
-		$this->db->where('idUsers', $id);
-		$this->db->update('users', $data);
-		return $this->db->affected_rows();
-	}
-
-
-	//reset password Function
-
-	public function getOneReset($id,$oldPassword){
-		$this->db->select('*');
-		$this->db->from('users');
-		$this->db->where(array('active' => 'Y','idUsers' => $id,'password' => $oldPassword));
-		return $this->db->get()->result_array();
-	}
-
-	public function setPassword($idUser,$data){
-		$this->db->where('idUsers', $idUser);
-		$this->db->update('users', $data);
-		return $this->db->affected_rows();
-	}
 
 
 

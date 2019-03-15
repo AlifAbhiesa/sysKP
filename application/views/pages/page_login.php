@@ -26,7 +26,7 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <img src="<?php echo base_url()?>assets/images/Logo Border.png" alt="" class="col-lg-12 mx-auto"><br>
+                        <img src="<?php echo base_url()?>assets/images/logo itenas.png" alt="" class="col-lg-12 mx-auto"><br>
 
                             <div class="form-group"><br>
                                 <label class="label">Username</label>

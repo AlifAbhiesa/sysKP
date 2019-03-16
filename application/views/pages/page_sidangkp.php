@@ -57,16 +57,16 @@
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>NIP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nip" placeholder="nip ...">
+						<label>Judul Kp</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="Judul KP ...">
 					</div>
 				</div>
 
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>NIDN</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nidn" placeholder="nidn ...">
+						<label>NRP</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="NRP ...">
 					</div>
 				</div>
 
@@ -79,39 +79,22 @@
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>Alamat</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="alamat" placeholder="alamat ...">
+						<label>Tanggal Sidang</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tglsidang" placeholder="Tanggal sidang ...">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>TTL</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tempatTglLhr" placeholder="Tempat Tanggal Lahir ...">
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<label class="border-bottom border-gray pb-2">Gender</label>
-					<select class="form-control" id="gender">
-						<option value="MALE">Male</option>
-						<option value="FEMALE">Female</option>
-					</select>
-				</div>
-
-
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Urutan Akademik</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="urutanAkademik" placeholder="Urutan Akademik ...">
+						<label>Penguji</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="penguji" placeholder="Penguji ...">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>No HP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHp" placeholder="No Hp ...">
+						<label>Nilai</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nilai" placeholder="Nilai ...">
 					</div>
 				</div>
 			</div>
@@ -146,7 +129,7 @@
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Dosen/getAll')?>",
+				"url": "<?php echo site_url('Sidangkp/getAll')?>",
 				"async":false,
 				"type": "POST"
 			},

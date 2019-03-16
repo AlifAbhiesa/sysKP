@@ -60,6 +60,39 @@ class Dosen extends CI_Controller
 		//JSON output
 		echo json_encode($output);
 	}
+
+	//add insert code here
+	public function addData()
+	{
+		$nip = $_POST['nip'];
+		$nidn = $_POST['nidn'];
+		$nama = $_POST['nama'];
+		$alamat = $_POST['alamat'];
+		$tempatTglLhr = $_POST['tempatTglLhr'];
+		$gender = $_POST['gender'];
+		$urutanAkademik = $_POST['urutanAkademik'];
+		$noHp = $_POST['noHp'];
+
+		$data = array(
+			'nip' => $nip,
+			'nidn' => $nidn,
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'tempatTglLhr' => $tempatTglLhr,
+			'gender' => $gender,
+			'urutanAkademik' => $urutanAkademik,
+			'noHp' => $noHp,
+
+		);
+
+		$result = $this->Dosen_model->addData($data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
 ?>
 

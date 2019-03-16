@@ -11,7 +11,7 @@ class Perusahaan_model extends CI_Model
 
 	var $table = 'perusahaan'; //nama tabel dari database
 	var $column_search = array('nama'); //field yang diizin untuk pencarian
-	var $order = array('id' => 'DESC'); // default order
+	var $order = array('idPrshn' => 'DESC'); // default order
 
 	public function __construct()
 	{

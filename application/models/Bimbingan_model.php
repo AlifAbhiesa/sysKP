@@ -11,7 +11,7 @@ class Bimbingan_model extends CI_Model
 
 	var $table = 'bimbingan'; //nama tabel dari database
 	var $column_search = array('nrp'); //field yang diizin untuk pencarian
-	var $order = array('id' => 'DESC'); // default order
+	var $order = array('idBbg' => 'DESC'); // default order
 
 	public function __construct()
 	{

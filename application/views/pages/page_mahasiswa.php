@@ -26,15 +26,14 @@
 							<th>Nama</th>
 							<th>Alamat</th>
 							<th>Gender</th>
-							<th>TTL</th>
+							<th>Tempat, Tanggal Lahir</th>
 							<th>Angkatan</th>
-							<th>No HP</th>
-							<th></th>
+							<th>No Hp</th>
 						</tr>
 						</thead>
 					</table>
 					<br>
-					<button type="button" class="btn btn-success" style="width: 100%;">
+					<button type="button" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#AddModal">
 						Add New Mahasiswa
 					</button>
 				</div>
@@ -42,6 +41,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!--- Modal Insert --->
 <div class="modal modal-success fade" id="AddModal">
@@ -59,7 +59,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>NRP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nip" placeholder="nip ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="nrp ...">
 					</div>
 				</div>
 
@@ -86,7 +86,7 @@
 					</select>
 				</div>
 
-                <div class="form-group">
+				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>TTL</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tempatTglLhr" placeholder="Tempat Tanggal Lahir ...">
@@ -96,7 +96,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Angkatan</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="angkatan" placeholder="Angkatan ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="angkatan" placeholder="angkatan ...">
 					</div>
 				</div>
 
@@ -110,13 +110,14 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
 				</button>
-				<button onclick="AddData()" type="button" class="btn btn-outline">Add Mahasiswa
+				<button onclick="AddData()" type="button" class="btn btn-outline">Add Dosen
 				</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- end of modal insert --->
+
 
 <script>
 	showData()
@@ -146,4 +147,35 @@
 		});
 
 	};
+
+	function AddData() {
+
+		var nrp = document.getElementById("nrp").value;
+		var nama = document.getElementById("nama").value;
+		var alamat = document.getElementById("alamat").value;
+		var gender = document.getElementById("gender").value;
+		var tempatTglLhr = document.getElementById("tempatTglLhr").value;
+		var angkatan = document.getElementById("angkatan").value;
+		var noHp = document.getElementById("noHp").value;
+
+		$.ajax({
+			url: "<?php echo base_url('Mahasiswa/addData'); ?>",
+			type: "post",
+			data: {
+				nrp:nrp,
+				nama:nama,
+				alamat:alamat,
+				gender:gender,
+				tempatTglLhr:tempatTglLhr,
+				angkatan:angkatan,
+				noHp:noHp,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+
+	}
 </script>

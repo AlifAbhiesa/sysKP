@@ -83,7 +83,7 @@ class Perusahaan_model extends CI_Model
 
 	//insert code here !
 	public function addData($data){
-		$this->db->insert('dosen', $data);
+		$this->db->insert('perusahaan', $data);
 		return $this->db->affected_rows();
 
 	}

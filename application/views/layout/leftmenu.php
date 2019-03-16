@@ -52,9 +52,16 @@
 				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Bimbingan</span>
 			</a>
 		</li>
-	
 		
-
+		<li class="<?php if ($this->uri->segment(1)==='Perusahaan'){
+			echo 'active';
+		}?> nav-item">
+			<a class="nav-link" href="<?php echo base_url()?>Perusahaan" >
+				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Perusahaan</span>
+			</a>
+		</li>
+	
+	
 		<li class="<?php if ($this->uri->segment(1)==='User'){
 			echo 'active';
 		}?> nav-item">

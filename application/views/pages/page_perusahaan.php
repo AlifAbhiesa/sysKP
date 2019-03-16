@@ -57,7 +57,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nama</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nip" placeholder="nip ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="Nama ...">
 					</div>
 				</div>
 
@@ -65,28 +65,28 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Alamat</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nidn" placeholder="nidn ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="alamat" placeholder="Alamat ...">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>No HP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHp" placeholder="No Hp ...">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>CP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="alamat" placeholder="alamat ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="cp" placeholder="Cp ...">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>No TelponCp</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tempatTglLhr" placeholder="Tempat Tanggal Lahir ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHpCp" placeholder="No TelponCp ...">
 					</div>
 				</div>
 
@@ -122,7 +122,7 @@
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Dosen/getAll')?>",
+				"url": "<?php echo site_url('Perusahaan/getAll')?>",
 				"async":false,
 				"type": "POST"
 			},

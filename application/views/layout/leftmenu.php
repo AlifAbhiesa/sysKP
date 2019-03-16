@@ -41,7 +41,7 @@
 			echo 'active';
 		}?> nav-item">
 			<a class="nav-link" href="<?php echo base_url()?>Dosen" >
-				<i class="menu-icon fa fa-file"></i>" style="color: #3c8dbc"></i> <span>&ensp;Dosen</span>
+				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Dosen</span>
 			</a>
 		</li>
 		

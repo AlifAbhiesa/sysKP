@@ -81,8 +81,12 @@ class Perusahaan_model extends CI_Model
 		return $this->db->count_all_results();
 	}
 
+	//insert code here !
+	public function addData($data){
+		$this->db->insert('dosen', $data);
+		return $this->db->affected_rows();
 
-
+	}
 
 
 }

@@ -43,6 +43,81 @@
 	</div>
 </div>
 
+<!--- Modal Insert --->
+<div class="modal modal-success fade" id="AddModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<label class="border-bottom border-gray pb-2">Add Goods</label>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>NRP</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nip" placeholder="nip ...">
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Nama</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Alamat</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="alamat" placeholder="alamat ...">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="border-bottom border-gray pb-2">Gender</label>
+					<select class="form-control" id="gender">
+						<option value="MALE">Male</option>
+						<option value="FEMALE">Female</option>
+					</select>
+				</div>
+
+                <div class="form-group">
+					<div class="md-input-wrapper">
+						<label>TTL</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tempatTglLhr" placeholder="Tempat Tanggal Lahir ...">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Angkatan</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="angkatan" placeholder="Angkatan ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>No HP</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHp" placeholder="No Hp ...">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
+				</button>
+				<button onclick="AddData()" type="button" class="btn btn-outline">Add Mahasiswa
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end of modal insert --->
+
 <script>
 	showData()
 	function showData() {

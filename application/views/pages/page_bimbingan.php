@@ -41,6 +41,67 @@
 	</div>
 </div>
 
+<!--- Modal Insert --->
+<div class="modal modal-success fade" id="AddModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<label class="border-bottom border-gray pb-2">Add Goods</label>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>NRP</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="NRP ...">
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Nama</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="Nama ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Judul KP</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="Judul KP ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Pembimbing Perusahaan</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingPrshn" placeholder="Pembimbing Perusahaan ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Pembimbing Dosen</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingDsn" placeholder="Pembimbing Dosen ...">
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
+				</button>
+				<button onclick="AddData()" type="button" class="btn btn-outline">Add Bimbingan
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end of modal insert --->
+
 <script>
 	showData()
 	function showData() {
@@ -60,7 +121,7 @@
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Mahasiswa/getAll')?>",
+				"url": "<?php echo site_url('Bimbingan/getAll')?>",
 				"async":false,
 				"type": "POST"
 			},

@@ -36,6 +36,15 @@
 				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Mahasiswa</span>
 			</a>
 		</li>
+	
+				<li class="<?php if ($this->uri->segment(1)==='Dosen'){
+			echo 'active';
+		}?> nav-item">
+			<a class="nav-link" href="<?php echo base_url()?>Dosen" >
+				<i class="menu-icon fa fa-file"></i>" style="color: #3c8dbc"></i> <span>&ensp;Dosen</span>
+			</a>
+		</li>
+		
 
 		<li class="<?php if ($this->uri->segment(1)==='User'){
 			echo 'active';

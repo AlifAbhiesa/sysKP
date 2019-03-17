@@ -27,12 +27,11 @@
 							<th>Judul KP</th>
 							<th>Pembimbing Perusahaan</th>
 							<th>Pembimbing Dosen</th>
-							<th></th>
 						</tr>
 						</thead>
 					</table>
 					<br>
-					<button type="button" class="btn btn-success" style="width: 100%;">
+					<button type="button" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#AddModal">
 						Add New Bimbingan
 					</button>
 				</div>
@@ -40,6 +39,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!--- Modal Insert --->
 <div class="modal modal-success fade" id="AddModal">
@@ -57,7 +57,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>NRP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="NRP ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="nrp ...">
 					</div>
 				</div>
 
@@ -65,28 +65,28 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nama</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="Nama ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>Judul KP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="Judul KP ...">
+						<label>Judul Kp</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="judulKp ...">
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Pembimbing Perusahaan</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingPrshn" placeholder="Pembimbing Perusahaan ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingPrshn" placeholder="pembimbing perusahaan ...">
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Pembimbing Dosen</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingDsn" placeholder="Pembimbing Dosen ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingDsn" placeholder="pembimbing Dosen ...">
 					</div>
 				</div>
 
@@ -101,6 +101,7 @@
 	</div>
 </div>
 <!-- end of modal insert --->
+
 
 <script>
 	showData()
@@ -130,4 +131,31 @@
 		});
 
 	};
+
+	function AddData() {
+
+		var nrp = document.getElementById("nrp").value;
+		var nama = document.getElementById("nama").value;
+		var judulKp = document.getElementById("judulKp").value;
+		var pembimbingPrshn = document.getElementById("pembimbingPrshn").value;
+		var pembimbingDsn = document.getElementById("pembimbingDsn").value;
+		
+		$.ajax({
+			url: "<?php echo base_url('Bimbingan/addData'); ?>",
+			type: "post",
+			data: {
+				nrp:nrp,
+				nama:nama,
+				judulKp:judulKp,
+				pembimbingPrshn:pembimbingPrshn,
+				pembimbingDsn:pembimbingDsn,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+
+	}
 </script>

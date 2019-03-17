@@ -25,8 +25,8 @@
 							<th>Nama</th>
 							<th>Alamat</th>
 							<th>No Hp</th>
-							<th>CP</th>
-							<th>No TelponCp</th>
+							<th>Cp</th>
+							<th>No Telpon Cp</th>
 						</tr>
 						</thead>
 					</table>
@@ -57,39 +57,37 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nama</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="Nama ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
 					</div>
 				</div>
-
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Alamat</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="alamat" placeholder="Alamat ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="alamat" placeholder="alamat ...">
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>No HP</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHp" placeholder="No Hp ...">
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>CP</label>
+						<label>Cp</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="cp" placeholder="Cp ...">
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>No TelponCp</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHpCp" placeholder="No TelponCp ...">
+						<label>No Hp Cp</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHpCp" placeholder="No Hp Cp ...">
 					</div>
 				</div>
-
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
@@ -134,27 +132,21 @@
 
 	function AddData() {
 
-		var nip = document.getElementById("nip").value;
-		var nidn = document.getElementById("nidn").value;
 		var nama = document.getElementById("nama").value;
 		var alamat = document.getElementById("alamat").value;
-		var tempatTglLhr = document.getElementById("tempatTglLhr").value;
-		var gender = document.getElementById("gender").value;
-		var urutanAkademik = document.getElementById("urutanAkademik").value;
 		var noHp = document.getElementById("noHp").value;
+		var cp = document.getElementById("cp").value;
+		var noHpCp = document.getElementById("noHpCp").value;
 
 		$.ajax({
-			url: "<?php echo base_url('Dosen/addData'); ?>",
+			url: "<?php echo base_url('Perusahaan/addData'); ?>",
 			type: "post",
 			data: {
-				nip:nip,
-				nidn:nidn,
 				nama:nama,
 				alamat:alamat,
-				tempatTglLhr:tempatTglLhr,
-				gender:gender,
-				urutanAkademik:urutanAkademik,
 				noHp:noHp,
+				cp:cp,
+				noHpCp:noHpCp,
 			},
 			cache: false,
 			success: function (response) {

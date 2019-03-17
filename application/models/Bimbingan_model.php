@@ -80,9 +80,12 @@ class Bimbingan_model extends CI_Model
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
+	
+	//insert code here !
+	public function addData($data){
+		$this->db->insert('bimbingan', $data);
+		return $this->db->affected_rows();
 
-
-
-
+	}
 
 }

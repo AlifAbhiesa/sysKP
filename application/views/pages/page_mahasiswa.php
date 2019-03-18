@@ -110,7 +110,7 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
 				</button>
-				<button onclick="AddData()" type="button" class="btn btn-outline">Add Dosen
+				<button onclick="AddData()" type="button" class="btn btn-outline">Add Mahasiswa
 				</button>
 			</div>
 		</div>

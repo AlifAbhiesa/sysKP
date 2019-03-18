@@ -59,5 +59,35 @@ class Mahasiswa extends CI_Controller
 		//JSON output
 		echo json_encode($output);
 	}
+	//add insert code here
+	public function addData()
+	{
+		$nrp = $_POST['nrp'];
+		$nama = $_POST['nama'];
+		$alamat = $_POST['alamat'];
+		$gender = $_POST['gender'];
+		$tempatTglLhr = $_POST['tempatTglLhr'];
+		$angkatan = $_POST['angkatan'];
+		$noHp = $_POST['noHp'];
+
+		$data = array(
+			'nrp' => $nrp,
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'gender' => $gender,
+			'tempatTglLhr' => $tempatTglLhr,
+			'angkatan' => $angkatan,
+			'noHp' => $noHp,
+
+		);
+
+		$result = $this->Mahasiswa_model->addData($data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
 ?>

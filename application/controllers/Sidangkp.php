@@ -45,7 +45,7 @@ class Sidangkp extends CI_Controller
 			$row[] = $field->penguji;
 			$row[] = $field->nilai;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteUser(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+				'<button onclick="deleteSidangkp(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 
@@ -79,6 +79,23 @@ class Sidangkp extends CI_Controller
 		);
 
 		$result = $this->Sidangkp_model->addData($data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
+	public function deleteData()
+	{
+		$id = $_POST['id'];
+		
+
+		$data = array(
+			'active' => 'N',
+		);
+
+		$result = $this->Sidangkp_model->updateData($id,$data);
 
 		if($result > 0){
 			echo "Ok";

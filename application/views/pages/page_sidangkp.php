@@ -28,6 +28,7 @@
 							<th>Tanggal Sidang</th>
 							<th>Penguji</th>
 							<th>Nilai</th>
+							<th>Action</th>
 						</tr>
 						</thead>
 					</table>
@@ -158,6 +159,25 @@
 				tglsidang:tglsidang,
 				penguji:penguji,
 				nilai:nilai,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+
+	}
+	
+	function deleteSidangkp(id) {
+
+		
+
+		$.ajax({
+			url: "<?php echo base_url('Sidangkp/deleteData'); ?>",
+			type: "post",
+			data: {
+				id:id,
 			},
 			cache: false,
 			success: function (response) {

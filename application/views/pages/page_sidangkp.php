@@ -101,7 +101,7 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
 				</button>
-				<button onclick="AddData()" type="button" class="btn btn-outline">Add Dosen
+				<button onclick="AddData()" type="button" class="btn btn-outline">Add Sidangkp
 				</button>
 			</div>
 		</div>
@@ -141,27 +141,23 @@
 
 	function AddData() {
 
-		var nip = document.getElementById("nip").value;
-		var nidn = document.getElementById("nidn").value;
+		var judulKp = document.getElementById("judulKp").value;
+		var nrp = document.getElementById("nrp").value;
 		var nama = document.getElementById("nama").value;
-		var alamat = document.getElementById("alamat").value;
-		var tempatTglLhr = document.getElementById("tempatTglLhr").value;
-		var gender = document.getElementById("gender").value;
-		var urutanAkademik = document.getElementById("urutanAkademik").value;
-		var noHp = document.getElementById("noHp").value;
+		var tglsidang = document.getElementById("tglsidang").value;
+		var penguji = document.getElementById("penguji").value;
+		var nilai = document.getElementById("nilai").value;
 
 		$.ajax({
-			url: "<?php echo base_url('Dosen/addData'); ?>",
+			url: "<?php echo base_url('Sidangkp/addData'); ?>",
 			type: "post",
 			data: {
-				nip:nip,
-				nidn:nidn,
+				judulKp:judulKp,
+				nrp:nrp,
 				nama:nama,
-				alamat:alamat,
-				tempatTglLhr:tempatTglLhr,
-				gender:gender,
-				urutanAkademik:urutanAkademik,
-				noHp:noHp,
+				tglsidang:tglsidang,
+				penguji:penguji,
+				nilai:nilai,
 			},
 			cache: false,
 			success: function (response) {

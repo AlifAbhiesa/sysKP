@@ -58,5 +58,33 @@ class Sidangkp extends CI_Controller
 		//JSON output
 		echo json_encode($output);
 	}
+	//add insert code here
+	public function addData()
+	{
+		$judulKp = $_POST['judulKp'];
+		$nrp = $_POST['nrp'];
+		$nama = $_POST['nama'];
+		$tglSidang = $_POST['tglSidang'];
+		$penguji = $_POST['penguji'];
+		$nilai = $_POST['nilai'];
+		
+		$data = array(
+			'judulKp' => $judulKp,
+			'nrp' => $nrp,
+			'nama' => $nama,
+			'tglSidang' => $tglSidang,
+			'penguji' => $penguji,
+			'nilai' => $nilai,
+			
+		);
+
+		$result = $this->Sidangkp_model->addData($data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
 ?>

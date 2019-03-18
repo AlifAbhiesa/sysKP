@@ -129,7 +129,7 @@
 		});
 
 	};
-
+	
 	function AddData() {
 
 		var nama = document.getElementById("nama").value;

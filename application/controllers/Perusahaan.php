@@ -57,5 +57,32 @@ class Perusahaan extends CI_Controller
 		//JSON output
 		echo json_encode($output);
 	}
+	//add insert code here
+	public function addData()
+	{
+		$nama = $_POST['nama'];
+		$alamat = $_POST['alamat'];
+		$noHp = $_POST['noHp'];
+		$cp = $_POST['cp'];
+		$noHpCp = $_POST['noHpCp'];
+
+		$data = array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'noHp' => $noHp,
+			'cp' => $cp,
+			'noHpCp' => $noHpCp,
+
+
+		);
+
+		$result = $this->Perusahaan_model->addData($data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
 ?>

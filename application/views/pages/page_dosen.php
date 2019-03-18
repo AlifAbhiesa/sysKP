@@ -30,6 +30,7 @@
 							<th>Gender</th>
 							<th>Urutan Akademik</th>
 							<th>No Hp</th>
+							<th>dada</th>
 						</tr>
 						</thead>
 					</table>
@@ -44,12 +45,13 @@
 </div>
 
 
+
 <!--- Modal Insert --->
 <div class="modal modal-success fade" id="AddModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<label class="border-bottom border-gray pb-2">Add Goods</label>
+				<label class="border-bottom border-gray pb-2">AddModal</label>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title"></h4>
@@ -128,7 +130,6 @@
 </div>
 <!-- end of modal insert --->
 
-
 <script>
 	showData()
 	function showData() {
@@ -188,6 +189,24 @@
 				location.reload();
 			}
 		});
+	}
+	
+function deleteDosen(id) {
 
+		
+
+		$.ajax({
+			url: "<?php echo base_url('Dosen/deleteData'); ?>",
+			type: "post",
+			data: {
+				id:id,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+	
 	}
 </script>

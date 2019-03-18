@@ -64,6 +64,7 @@ class Mahasiswa_model extends CI_Model
 		$this->_get_datatables_query();
 		if($_POST['length'] != -1)
 			$this->db->limit($_POST['length'], $_POST['start']);
+		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -71,6 +72,7 @@ class Mahasiswa_model extends CI_Model
 	function count_filtered()
 	{
 		$this->_get_datatables_query();
+		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -84,6 +86,12 @@ class Mahasiswa_model extends CI_Model
 	//insert code here !
 	public function addData($data){
 		$this->db->insert('mahasiswa', $data);
+		return $this->db->affected_rows();
+		
+	}
+		public function updateData($id, $data){
+		$this->db->where('id', $id);
+		$this->db->update('mahasiswa', $data);
 		return $this->db->affected_rows();
 
 	}

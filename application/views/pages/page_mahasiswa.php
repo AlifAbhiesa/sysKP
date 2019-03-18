@@ -29,6 +29,7 @@
 							<th>Tempat, Tanggal Lahir</th>
 							<th>Angkatan</th>
 							<th>No Hp</th>
+							<th>Action</th>
 						</tr>
 						</thead>
 					</table>
@@ -169,6 +170,25 @@
 				tempatTglLhr:tempatTglLhr,
 				angkatan:angkatan,
 				noHp:noHp,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+	}
+		});
+
+	}
+	
+	function deleteMahasiswa(id) {
+
+		
+
+		$.ajax({
+			url: "<?php echo base_url('Mahasiswa/deleteData'); ?>",
+			type: "post",
+			data: {
+				id:id,
 			},
 			cache: false,
 			success: function (response) {

@@ -9,9 +9,9 @@
 class Bimbingan_model extends CI_Model
 {
 
-	var $table = 'bimbingan'; //nama tabel dari database
-	var $column_search = array('nrp'); //field yang diizin untuk pencarian
-	var $order = array('idBbg' => 'DESC'); // default order
+	var $table = 'Bimbingan'; //nama tabel dari database
+	var $column_search = array('nama'); //field yang diizin untuk pencarian
+	var $order = array('id' => 'DESC'); // default order
 
 	public function __construct()
 	{
@@ -64,6 +64,7 @@ class Bimbingan_model extends CI_Model
 		$this->_get_datatables_query();
 		if($_POST['length'] != -1)
 			$this->db->limit($_POST['length'], $_POST['start']);
+		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -71,6 +72,7 @@ class Bimbingan_model extends CI_Model
 	function count_filtered()
 	{
 		$this->_get_datatables_query();
+		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -80,10 +82,16 @@ class Bimbingan_model extends CI_Model
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
-	
+
 	//insert code here !
 	public function addData($data){
-		$this->db->insert('bimbingan', $data);
+		$this->db->insert('Bimbingan', $data);
+		return $this->db->affected_rows();
+
+	}
+	public function updateData($id, $data){
+		$this->db->where('id', $id);
+		$this->db->update('bimbingan', $data);
 		return $this->db->affected_rows();
 
 	}

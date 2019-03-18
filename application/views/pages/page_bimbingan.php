@@ -22,11 +22,12 @@
 						<thead>
 						<tr>
 							<th>No</th>
-							<th>NRP</th>
+							<th>Nrp</th>
 							<th>Nama</th>
-							<th>Judul KP</th>
+							<th>JudulKp</th>
 							<th>Pembimbing Perusahaan</th>
 							<th>Pembimbing Dosen</th>
+							<th>action</th>
 						</tr>
 						</thead>
 					</table>
@@ -41,12 +42,13 @@
 </div>
 
 
+
 <!--- Modal Insert --->
 <div class="modal modal-success fade" id="AddModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<label class="border-bottom border-gray pb-2">Add Goods</label>
+				<label class="border-bottom border-gray pb-2">AddModal</label>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title"></h4>
@@ -61,13 +63,13 @@
 					</div>
 				</div>
 
-
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nama</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
 					</div>
 				</div>
+				
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
@@ -75,21 +77,20 @@
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="judulKp ...">
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Pembimbing Perusahaan</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingPrshn" placeholder="pembimbing perusahaan ...">
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Pembimbing Dosen</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingDsn" placeholder="pembimbing Dosen ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingPrshn" placeholder="pembimbingPrshn ...">
 					</div>
 				</div>
 
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Pembimbing Dosen</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="pembimbingDsn" placeholder="No Hp ...">
+					</div>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
@@ -101,7 +102,6 @@
 	</div>
 </div>
 <!-- end of modal insert --->
-
 
 <script>
 	showData()
@@ -139,7 +139,7 @@
 		var judulKp = document.getElementById("judulKp").value;
 		var pembimbingPrshn = document.getElementById("pembimbingPrshn").value;
 		var pembimbingDsn = document.getElementById("pembimbingDsn").value;
-		
+
 		$.ajax({
 			url: "<?php echo base_url('Bimbingan/addData'); ?>",
 			type: "post",
@@ -149,6 +149,25 @@
 				judulKp:judulKp,
 				pembimbingPrshn:pembimbingPrshn,
 				pembimbingDsn:pembimbingDsn,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+
+	}
+	
+	function deleteBimbingan(id) {
+
+		
+
+		$.ajax({
+			url: "<?php echo base_url('Bimbingan/deleteData'); ?>",
+			type: "post",
+			data: {
+				id:id,
 			},
 			cache: false,
 			success: function (response) {

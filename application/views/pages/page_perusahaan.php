@@ -27,6 +27,7 @@
 							<th>No Hp</th>
 							<th>Cp</th>
 							<th>No Telpon Cp</th>
+							<th>Action</th>
 						</tr>
 						</thead>
 					</table>
@@ -147,6 +148,25 @@
 				noHp:noHp,
 				cp:cp,
 				noHpCp:noHpCp,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+
+	}
+	
+	function deletePerusahaan(id) {
+
+		
+
+		$.ajax({
+			url: "<?php echo base_url('Perusahaan/deleteData'); ?>",
+			type: "post",
+			data: {
+				id:id,
 			},
 			cache: false,
 			success: function (response) {

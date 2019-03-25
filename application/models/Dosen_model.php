@@ -95,5 +95,13 @@ class Dosen_model extends CI_Model
 		return $this->db->affected_rows();
 
 	}
+	public function getOne($id){
+		$this->db->select('*');
+		$this->db->from('dosen');
+		$this->db->where(array('id' => $id));
+		
+		return $this->db->get()->result_array();
+		
+	}
 
 }

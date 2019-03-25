@@ -41,9 +41,6 @@ class Dosen extends CI_Controller
 			$row[] = $field->nip;
 			$row[] = $field->nidn;
 			$row[] = $field->nama;
-			$row[] = $field->alamat;
-			$row[] = $field->tempatTglLhr;
-			$row[] = $field->gender;
 			$row[] = $field->urutanAkademik;
 			$row[] = $field->noHp;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
@@ -67,9 +64,6 @@ class Dosen extends CI_Controller
 		$nip = $_POST['nip'];
 		$nidn = $_POST['nidn'];
 		$nama = $_POST['nama'];
-		$alamat = $_POST['alamat'];
-		$tempatTglLhr = $_POST['tempatTglLhr'];
-		$gender = $_POST['gender'];
 		$urutanAkademik = $_POST['urutanAkademik'];
 		$noHp = $_POST['noHp'];
 
@@ -77,9 +71,6 @@ class Dosen extends CI_Controller
 			'nip' => $nip,
 			'nidn' => $nidn,
 			'nama' => $nama,
-			'alamat' => $alamat,
-			'tempatTglLhr' => $tempatTglLhr,
-			'gender' => $gender,
 			'urutanAkademik' => $urutanAkademik,
 			'noHp' => $noHp,
 
@@ -100,6 +91,45 @@ class Dosen extends CI_Controller
 
 		$data = array(
 			'active' => 'N',
+		);
+
+		$result = $this->Dosen_model->updateData($id,$data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
+	public function getOne()
+	{
+		$id = $_POST['id'];
+		
+
+		$data = array(
+			'active' => 'N',
+		);
+
+		$result = $this->Dosen_model->getOne($id);
+
+		echo json_encode($result);
+	}
+		public function updateData()
+	{
+		$nip = $_POST['nip'];
+		$id = $_POST['id'];
+		$nidn = $_POST['nidn'];
+		$nama = $_POST['nama'];
+		$urutanAkademik= $_POST['urutanAkademik'];
+		$noHp= $_POST['noHp'];
+		
+
+		$data = array(
+			'nip' => $nip,
+			'nidn' => $nidn,
+			'nama' => $nama,
+			'urutanAkademik' => $urutanAkademik,
+			'noHp' => $noHp,
 		);
 
 		$result = $this->Dosen_model->updateData($id,$data);

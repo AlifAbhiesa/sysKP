@@ -89,12 +89,19 @@ class Perusahaan_model extends CI_Model
 		return $this->db->affected_rows();
 
 	}
-	
 	public function updateData($id, $data){
 		$this->db->where('id', $id);
 		$this->db->update('perusahaan', $data);
 		return $this->db->affected_rows();
-
+	}
+	
+	public function getOne($id){
+		$this->db->select('*');
+		$this->db->from('perusahaan');
+		$this->db->where(array('id' => $id));
+		
+		return $this->db->get()->result_array();
+		
 	}
 
 

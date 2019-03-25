@@ -102,5 +102,44 @@ class Perusahaan extends CI_Controller
 			echo "Failed";
 		}
 	}
+		public function getOne()
+	{
+		$id = $_POST['id'];
+		
+
+		$data = array(
+			'active' => 'N',
+		);
+
+		$result = $this->Perusahaan_model->getOne($id);
+
+		echo json_encode($result);
+	}
+		public function updateData()
+	{
+		$id = $_POST['id'];
+		$nama = $_POST['nama'];
+		$alamat = $_POST['alamat'];
+		$noHp = $_POST['noHp'];
+		$cp = $_POST['cp'];
+		$noHpCp= $_POST['noHpCp'];
+		
+
+		$data = array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'noHp' => $noHp,
+			'cp' => $cp,
+			'noHpCp' => $noHpCp,
+		);
+
+		$result = $this->Perusahaan_model->updateData($id,$data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
 ?>

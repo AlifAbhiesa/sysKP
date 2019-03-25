@@ -103,5 +103,46 @@ class Sidangkp extends CI_Controller
 			echo "Failed";
 		}
 	}
+	public function getOne()
+	{
+		$id = $_POST['id'];
+		
+
+		$data = array(
+			'active' => 'N',
+		);
+
+		$result = $this->Sidangkp_model->getOne($id);
+
+		echo json_encode($result);
+	}
+		public function updateData()
+	{
+		$judulKp = $_POST['judulKp'];
+		$id = $_POST['id'];
+		$nrp = $_POST['nrp'];
+		$nama = $_POST['nama'];
+		$tglSidang = $_POST['tglSidang'];
+		$penguji= $_POST['penguji'];
+		$nilai= $_POST['nilai'];
+		
+
+		$data = array(
+			'judulKp' => $judulKp,
+			'nrp' => $nrp,
+			'nama' => $nama,
+			'tglSidang' => $tglSidang,
+			'penguji' => $penguji,
+			'nilai' => $nilai,
+		);
+
+		$result = $this->Sidangkp_model->updateData($id,$data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
 ?>

@@ -13,7 +13,7 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="box-header">
-					<h3 class="box-title">User List</h3>
+					<h3 class="box-title">User SidangKp</h3>
 					<hr>
 				</div>
 				<div class="box-body">
@@ -48,7 +48,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<label class="border-bottom border-gray pb-2">Add Goods</label>
+				<label class="border-bottom border-gray pb-2">Add SidangKp</label>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title"></h4>
@@ -81,7 +81,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Tanggal Sidang</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tglsidang" placeholder="Tanggal sidang ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tglSidang" placeholder="Tanggal sidang ...">
 					</div>
 				</div>
 
@@ -109,6 +109,74 @@
 	</div>
 </div>
 <!-- end of modal insert --->
+
+<!--- Modal update --->
+<div class="modal modal-success fade" id="UpdateModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<label class="border-bottom border-gray pb-2">Add SidangKp</label>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"></h4>
+			</div>
+			<div class="modal-body">
+
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Judul Kp</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjudulKp" placeholder="Judul KP ...">
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>NRP</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="NRP ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Nama</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnama" placeholder="nama ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Tanggal Sidang</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtglSidang" placeholder="Tanggal sidang ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Penguji</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updpenguji" placeholder="Penguji ...">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="md-input-wrapper">
+						<label>Nilai</label>
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnilai" placeholder="Nilai ...">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+			<input type="text" id="idSidangkp" hidden>
+				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
+				</button>
+				<button onclick="updateData()" type="button" class="btn btn-outline">Update SidangKp
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end of modal update --->
 
 
 <script>
@@ -145,7 +213,7 @@
 		var judulKp = document.getElementById("judulKp").value;
 		var nrp = document.getElementById("nrp").value;
 		var nama = document.getElementById("nama").value;
-		var tglsidang = document.getElementById("tglsidang").value;
+		var tglSidang = document.getElementById("tglSidang").value;
 		var penguji = document.getElementById("penguji").value;
 		var nilai = document.getElementById("nilai").value;
 
@@ -156,7 +224,7 @@
 				judulKp:judulKp,
 				nrp:nrp,
 				nama:nama,
-				tglsidang:tglsidang,
+				tglSidang:tglSidang,
 				penguji:penguji,
 				nilai:nilai,
 			},
@@ -178,6 +246,64 @@
 			type: "post",
 			data: {
 				id:id,
+			},
+			cache: false,
+			success: function (response) {
+				// alert(response);
+				location.reload();
+			}
+		});
+
+	}
+	function showModal(){
+		$('#UpdateModal').modal('show');
+	}
+	function getOne(id) {
+		$.ajax({
+			url: "<?php echo base_url('Sidangkp/getOne'); ?>",
+			type: "post",
+			data: {
+				id:id,
+			},
+			cache: false,
+			success: function (response) {
+				response = JSON.parse(response);
+				
+				document.getElementById("updnilai").value=response[0]['nilai'];
+				document.getElementById("updpenguji").value=response[0]['penguji'];
+				document.getElementById("updtglSidang").value=response[0]['tglSidang'];
+				document.getElementById("updnama").value=response[0]['nama'];
+				document.getElementById("updnrp").value=response[0]['nrp'];
+				document.getElementById("updjudulKp").value=response[0]['judulKp'];
+				document.getElementById("idSidangkp").value=response[0]['id'];
+				
+				showModal();
+			}
+		});
+
+	}
+	function updateData() {
+
+		var judulKp = document.getElementById("updjudulKp").value;
+		var id = document.getElementById("idSidangkp").value;
+	    var nrp = document.getElementById("updnrp").value;
+		var nama = document.getElementById("updnama").value;
+		var tglSidang = document.getElementById("updtglSidang").value;
+		var penguji = document.getElementById("updpenguji").value;
+		var nilai = document.getElementById("updnilai").value;
+		
+		$.ajax({
+			url: "<?php echo base_url('Sidangkp/updateData'); ?>",
+			type: "post",
+			data: {
+				judulKp:judulKp,
+				id:id,
+				nrp:nrp,
+				nama:nama,
+				tglSidang:tglSidang,
+				penguji:penguji,
+				nilai:nilai,
+				
 			},
 			cache: false,
 			success: function (response) {

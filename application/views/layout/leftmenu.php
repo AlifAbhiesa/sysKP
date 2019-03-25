@@ -14,10 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-success btn-block">New Shop
-                    <i class="mdi mdi-plus"></i>
-                </button>
-            </div>
+               
         </li>
 
         <li class="<?php if ($this->uri->segment(1)==='Dashboard'){
@@ -49,7 +46,7 @@
 			echo 'active';
 		}?> nav-item">
 			<a class="nav-link" href="<?php echo base_url()?>Bimbingan" >
-				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Bimbingan</span>
+				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Dosen Bimbingan</span>
 			</a>
 		</li>
 		
@@ -68,8 +65,7 @@
 				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Sidangkp</span>
 			</a>
 		</li>
-	
-	
+
 		<li class="<?php if ($this->uri->segment(1)==='User'){
 			echo 'active';
 		}?> nav-item">

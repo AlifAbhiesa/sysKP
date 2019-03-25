@@ -101,6 +101,46 @@ class Bimbingan extends CI_Controller
 			echo "Failed";
 		}
 	}
+		public function getOne()
+	{
+		$id = $_POST['id'];
+		
+
+		$data = array(
+			'active' => 'N',
+		);
+
+		$result = $this->Bimbingan_model->getOne($id);
+
+		echo json_encode($result);
+	}
+		public function updateData()
+	{
+		$nrp = $_POST['nrp'];
+		$id = $_POST['id'];
+		$nama = $_POST['nama'];
+		$judulKp = $_POST['judulKp'];
+		$pembimbingPrshn = $_POST['pembimbingPrshn'];
+		$pembimbingDsn= $_POST['pembimbingDsn'];
+		
+
+		$data = array(
+			'nrp' => $nrp,
+			'nama' => $nama,
+			'judulKp' => $judulKp,
+			'pembimbingPrshn' => $pembimbingPrshn,
+			'pembimbingDsn' => $pembimbingDsn,
+		);
+
+		$result = $this->Bimbingan_model->updateData($id,$data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
 }
+
 ?>
 

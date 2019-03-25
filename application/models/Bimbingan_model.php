@@ -93,7 +93,15 @@ class Bimbingan_model extends CI_Model
 		$this->db->where('id', $id);
 		$this->db->update('bimbingan', $data);
 		return $this->db->affected_rows();
-
+	}
+	
+	public function getOne($id){
+		$this->db->select('*');
+		$this->db->from('bimbingan');
+		$this->db->where(array('id' => $id));
+		
+		return $this->db->get()->result_array();
+		
 	}
 
 }

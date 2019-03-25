@@ -51,7 +51,7 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
             <a>
-                <img src="<?php echo base_url()?>assets/images/Logo Border.jpg"  height="60px"/>
+                <img src="<?php echo base_url()?>assets/images/logo itenas.png"  height="60px"/>
             </a>
             <a class="navbar-brand brand-logo-mini" href="index.html">
                 <img src="<?php echo base_url()?>assets/images/logo-mini.svg" alt="logo" />

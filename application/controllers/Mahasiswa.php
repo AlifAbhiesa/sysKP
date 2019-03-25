@@ -40,11 +40,10 @@ class Mahasiswa extends CI_Controller
 			$row[] = $no;
 			$row[] = $field->nrp;
 			$row[] = $field->nama;
-			$row[] = $field->alamat;
-			$row[] = $field->gender;
-			$row[] = $field->tempatTglLhr;
-			$row[] = $field->angkatan;
 			$row[] = $field->noHp;
+			$row[] = $field->perusahaan;
+			$row[] = $field->dosenWali;
+			$row[] = $field->dosenPmbg;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
 				'<button onclick="deleteMahasiswa(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
@@ -64,20 +63,18 @@ class Mahasiswa extends CI_Controller
 	{
 		$nrp = $_POST['nrp'];
 		$nama = $_POST['nama'];
-		$alamat = $_POST['alamat'];
-		$gender = $_POST['gender'];
-		$tempatTglLhr = $_POST['tempatTglLhr'];
-		$angkatan = $_POST['angkatan'];
 		$noHp = $_POST['noHp'];
+		$perusahaan = $_POST['perusahaan'];
+		$dosenWali = $_POST['dosenWali'];
+		$dosenPmbg= $_POST['dosenPmbg'];
 
 		$data = array(
 			'nrp' => $nrp,
 			'nama' => $nama,
-			'alamat' => $alamat,
-			'gender' => $gender,
-			'tempatTglLhr' => $tempatTglLhr,
-			'angkatan' => $angkatan,
 			'noHp' => $noHp,
+			'perusahaan' => $perusahaan,
+			'dosenWali' => $dosenWali,
+			'dosenPmbg' => $dosenPmbg,
 
 		);
 
@@ -96,6 +93,47 @@ class Mahasiswa extends CI_Controller
 
 		$data = array(
 			'active' => 'N',
+		);
+
+		$result = $this->Mahasiswa_model->updateData($id,$data);
+
+		if($result > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
+	}
+	public function getOne()
+	{
+		$id = $_POST['id'];
+		
+
+		$data = array(
+			'active' => 'N',
+		);
+
+		$result = $this->Mahasiswa_model->getOne($id);
+
+		echo json_encode($result);
+	}
+		public function updateData()
+	{
+		$nrp = $_POST['nrp'];
+		$id = $_POST['id'];
+		$nama = $_POST['nama'];
+		$noHp = $_POST['noHp'];
+		$perusahaan = $_POST['perusahaan'];
+		$dosenWali = $_POST['dosenWali'];
+		$dosenPmbg = $_POST['dosenPmbg'];
+		
+
+		$data = array(
+			'nrp' => $nrp,
+			'nama' => $nama,
+			'noHp' => noHp,
+			'perusahaan' => $perusahaan,
+			'dosenWali' => $dosenWali,
+			'dosenPmbg' => $dosenPmbg,
 		);
 
 		$result = $this->Mahasiswa_model->updateData($id,$data);

@@ -38,7 +38,7 @@
 			echo 'active';
 		}?> nav-item">
 			<a class="nav-link" href="<?php echo base_url()?>Dosen" >
-				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Dosen</span>
+				<i class="menu-icon fa fa-file " style="color: #3c8dbc"></i> <span>&ensp;Dosen</span>
 			</a>
 		</li>
 
@@ -54,7 +54,7 @@
 			echo 'active';
 		}?> nav-item">
 			<a class="nav-link" href="<?php echo base_url()?>Perusahaan" >
-				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Perusahaan</span>
+				<i class="menu-icon fa fa-building" style="color: #3c8dbc"></i> <span>&ensp;Perusahaan</span>
 			</a>
 		</li>
 		

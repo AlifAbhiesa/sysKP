@@ -9,8 +9,8 @@
 class Bimbingan_model extends CI_Model
 {
 
-	var $table = 'Bimbingan'; //nama tabel dari database
-	var $column_search = array('nama'); //field yang diizin untuk pencarian
+	var $table = 'bimbingan'; //nama tabel dari database
+	var $column_search = array('nrp'); //field yang diizin untuk pencarian
 	var $order = array('id' => 'DESC'); // default order
 
 	public function __construct()
@@ -82,19 +82,19 @@ class Bimbingan_model extends CI_Model
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
-
+	
 	//insert code here !
 	public function addData($data){
-		$this->db->insert('Bimbingan', $data);
+		$this->db->insert('bimbingan', $data);
 		return $this->db->affected_rows();
-
+		
 	}
-	public function updateData($id, $data){
+		public function updateData($id, $data){
 		$this->db->where('id', $id);
 		$this->db->update('bimbingan', $data);
 		return $this->db->affected_rows();
+
 	}
-	
 	public function getOne($id){
 		$this->db->select('*');
 		$this->db->from('bimbingan');

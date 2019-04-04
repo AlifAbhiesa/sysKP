@@ -42,6 +42,14 @@
             </a>
         </li>
 
+        <li class="<?php if ($this->uri->segment(1) === 'Statistic') {
+                        echo 'active';
+                    } ?> nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>Statistic">
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Statistic</span>
+            </a>
+        </li>
+
         <li class="<?php if ($this->uri->segment(1) === 'Dosen') {
                         echo 'active';
                     } ?> nav-item">

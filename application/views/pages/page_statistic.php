@@ -234,7 +234,7 @@
 				response = JSON.parse(response);
 				
 				document.getElementById("updjmlpenguji").value=response[0]['jmlpenguji'];
-				document.getElementById("updjmlbg").value=response[0]['jmlbbg'];
+				document.getElementById("updjmlbbg").value=response[0]['jmlbbg'];
 				document.getElementById("updnodosen").value=response[0]['nodosen'];
 				document.getElementById("updnama").value=response[0]['nama'];
 				document.getElementById("idStatistic").value=response[0]['id'];

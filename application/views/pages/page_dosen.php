@@ -103,11 +103,12 @@
 				</div>
 
 				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Semester</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="semester" placeholder="Semester ...">
+						<label class="border-bottom border-gray pb-2">Semester</label>
+						<select class="form-control" id="semester">
+							<option value="Genap">Genap</option>
+							<option value="Ganjil">Ganjil</option>
+						</select>
 					</div>
-				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
@@ -177,11 +178,12 @@
 				</div>
 
 				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Semester</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updsemester" placeholder="Semester ...">
+						<label class="border-bottom border-gray pb-2">Semester</label>
+						<select class="form-control" id="updsemester">
+							<option value="Genap">Genap</option>
+							<option value="Ganjil">Ganjil</option>
+						</select>
 					</div>
-				</div>
 			</div>
 			<div class="modal-footer">
 			<input type="text" id="idDosen" hidden>

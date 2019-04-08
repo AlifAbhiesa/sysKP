@@ -18,8 +18,8 @@
                 </div>
                 <div class="box-body">
                     <hr>
-                    <table class="table table-bordered table-striped dt-responsive" id="myData" width="100%">
-                        <thead>
+                    <table class="table table-bordered table-primary dt-responsive" id="myData" width="100%">
+                        <thead class="thead-dark">>
                             <tr>
                                 <th>No</th>
                                 <th>NRP</th>
@@ -384,4 +384,4 @@
         });
 
     }
-</script> 
+</script>

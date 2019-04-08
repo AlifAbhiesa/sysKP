@@ -18,19 +18,19 @@
 				</div>
 				<div class="box-body">
 					<hr>
-					<table class="table table-bordered table-striped dt-responsive" id="myData" width="100%" >
-						<thead>
-						<tr>
-							<th>No</th>
-							<th>NRP</th>
-							<th>Nama</th>
-							<th>No HP</th>
-							<th>Tanggal Daftar</th>
-							<th>Tempat Usulan KP</th>
-							<th>Tahun Ajaran</th>
-							<th>Semester</th>
-							<th>Action</th>
-						</tr>
+					<table class="table table-bordered table-primary dt-responsive" id="myData" width="100%">
+						<thead class="thead-dark">
+							<tr>
+								<th>No</th>
+								<th>NRP</th>
+								<th>Nama</th>
+								<th>No HP</th>
+								<th>Tanggal Daftar</th>
+								<th>Tempat Usulan KP</th>
+								<th>Tahun Ajaran</th>
+								<th>Semester</th>
+								<th>Action</th>
+							</tr>
 						</thead>
 					</table>
 					<br>
@@ -93,7 +93,7 @@
 						<label>Tempat Usulan KP</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tempatUslnKp" placeholder="Tempat Usulan KP ...">
 					</div>
-				</div> 
+				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
@@ -103,12 +103,12 @@
 				</div>
 
 				<div class="form-group">
-						<label class="border-bottom border-gray pb-2">Semester</label>
-						<select class="form-control" id="semester">
-							<option value="Genap">Genap</option>
-							<option value="Ganjil">Ganjil</option>
-						</select>
-					</div>
+					<label class="border-bottom border-gray pb-2">Semester</label>
+					<select class="form-control" id="semester">
+						<option value="Genap">Genap</option>
+						<option value="Ganjil">Ganjil</option>
+					</select>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
@@ -140,7 +140,7 @@
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="nrp ...">
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nama</label>
@@ -168,7 +168,7 @@
 						<label>Tempat Usulan KP</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtempatUslnKp" placeholder="Tempat Usulan KP ...">
 					</div>
-				</div> 
+				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
@@ -178,15 +178,15 @@
 				</div>
 
 				<div class="form-group">
-						<label class="border-bottom border-gray pb-2">Semester</label>
-						<select class="form-control" id="updsemester">
-							<option value="Genap">Genap</option>
-							<option value="Ganjil">Ganjil</option>
-						</select>
-					</div>
+					<label class="border-bottom border-gray pb-2">Semester</label>
+					<select class="form-control" id="updsemester">
+						<option value="Genap">Genap</option>
+						<option value="Ganjil">Ganjil</option>
+					</select>
+				</div>
 			</div>
 			<div class="modal-footer">
-			<input type="text" id="idDosen" hidden>
+				<input type="text" id="idDosen" hidden>
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
 				</button>
 				<button onclick="updateData()" type="button" class="btn btn-outline">update Dosen
@@ -199,25 +199,27 @@
 
 <script>
 	showData()
+
 	function showData() {
 		//datatables
 		table = $('#myData').DataTable({
-			"columnDefs": [ {
-				"targets": 0,
-				"width": "50px"
-			},
+			"columnDefs": [{
+					"targets": 0,
+					"width": "50px"
+				},
 				{
-					"targets": [1,2,3],
+					"targets": [1, 2, 3],
 					"width": "200px"
-				}],
+				}
+			],
 			"ordering": false,
 			"destroy": true,
 			"serverSide": true,
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Dosen/getAll')?>",
-				"async":false,
+				"url": "<?php echo site_url('Dosen/getAll') ?>",
+				"async": false,
 				"type": "POST"
 			},
 
@@ -240,68 +242,71 @@
 			url: "<?php echo base_url('Dosen/addData'); ?>",
 			type: "post",
 			data: {
-				nrp:nrp,
-				nama:nama,
-				noHp:noHp,
-				tanggalDftr:tanggalDftr,
-				tempatUslnKp:tempatUslnKp,
-				tahunAjrn:tahunAjrn,
-				semester:semester,
+				nrp: nrp,
+				nama: nama,
+				noHp: noHp,
+				tanggalDftr: tanggalDftr,
+				tempatUslnKp: tempatUslnKp,
+				tahunAjrn: tahunAjrn,
+				semester: semester,
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				// alert(response);
 				location.reload();
 			}
 		});
 	}
-	
-function deleteDosen(id) {
 
-		
+	function deleteDosen(id) {
+
+
 
 		$.ajax({
 			url: "<?php echo base_url('Dosen/deleteData'); ?>",
 			type: "post",
 			data: {
-				id:id,
+				id: id,
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				// alert(response);
 				location.reload();
 			}
 		});
-	
+
 	}
-	function showModal(){
+
+	function showModal() {
 		$('#UpdateModal').modal('show');
 	}
+
 	function getOne(id) {
 		$.ajax({
 			url: "<?php echo base_url('Dosen/getOne'); ?>",
 			type: "post",
 			data: {
-				id:id,
+				id: id,
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				response = JSON.parse(response);
-				
-				document.getElementById("updnoHp").value=response[0]['noHp'];
-				document.getElementById("updtahunAjrn").value=response[0]['tahunAjrn'];
-				document.getElementById("updnama").value=response[0]['nama'];
-				document.getElementById("updnrp").value=response[0]['nrp'];
-				document.getElementById("updtanggalDftr").value=response[0]['tanggalDftr'];
-				document.getElementById("updsemester").value=response[0]['semester']
-				document.getElementById("updtempatUslnKp").value=response[0]['tempatUslnKp']
-				document.getElementById("idDosen").value=response[0]['id'];
-				
+
+				document.getElementById("updnoHp").value = response[0]['noHp'];
+				document.getElementById("updtahunAjrn").value = response[0]['tahunAjrn'];
+				document.getElementById("updnama").value = response[0]['nama'];
+				document.getElementById("updnrp").value = response[0]['nrp'];
+				document.getElementById("updtanggalDftr").value = response[0]['tanggalDftr'];
+				document.getElementById("updsemester").value = response[0]['semester']
+				document.getElementById("updtempatUslnKp").value = response[0]['tempatUslnKp']
+				document.getElementById("idDosen").value = response[0]['id'];
+
 				showModal();
 			}
 		});
 
 	}
+
 	function updateData() {
 
 		var nrp = document.getElementById("updnrp").value;
@@ -318,18 +323,18 @@ function deleteDosen(id) {
 			url: "<?php echo base_url('Dosen/updateData'); ?>",
 			type: "post",
 			data: {
-				nrp:nrp,
-				id:id,
-				nama:nama,
-				noHp:noHp,
-				tanggalDftr:tanggalDftr,
-				tempatUslnKp:tempatUslnKp,
-				tahunAjrn:tahunAjrn,
-				semester:semester,
-				
+				nrp: nrp,
+				id: id,
+				nama: nama,
+				noHp: noHp,
+				tanggalDftr: tanggalDftr,
+				tempatUslnKp: tempatUslnKp,
+				tahunAjrn: tahunAjrn,
+				semester: semester,
+
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				// alert(response);
 				location.reload();
 			}

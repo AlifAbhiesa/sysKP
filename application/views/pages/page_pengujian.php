@@ -18,8 +18,8 @@
                 </div>
                 <div class="box-body">
                     <hr>
-                    <table class="table table-bordered table-striped dt-responsive" id="myData" width="100%">
-                        <thead>
+                    <table class="table table-bordered table-primary dt-responsive" id="myData" width="100%">
+                        <thead class="thead-dark">>
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
@@ -54,7 +54,6 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
@@ -213,7 +212,7 @@
         var nmmhsw = document.getElementById("nmmhsw").value;
         var nrp = document.getElementById("nrp").value;
         var instansi = document.getElementById("instansi").value;
-        var judulKp= document.getElementById("judulKp").value;
+        var judulKp = document.getElementById("judulKp").value;
         var dpmbg = document.getElementById("dpmbg").value;
         var jdwlSdng = document.getElementById("jdwlSdng").value;
 
@@ -313,4 +312,4 @@
         });
 
     }
-</script> 
+</script>

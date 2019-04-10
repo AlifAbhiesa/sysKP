@@ -18,16 +18,16 @@
 				</div>
 				<div class="box-body">
 					<hr>
-					<table class="table table-bordered table-striped dt-responsive" id="myData" width="100%" >
-						<thead>
-						<tr>
-							<th>No</th>
-							<th>Nama</th>
-							<th>No Dosen</th>
-							<th>Jml Bimbingan</th>
-							<th>Jml Pengujian</th>
-							<th>Action</th>
-						</tr>
+					<table class="table table-bordered table-primary dt-responsive" id="myData" width="100%">
+						<thead class="thead-dark">
+							<tr>
+								<th>No</th>
+								<th>Nama</th>
+								<th>No Dosen</th>
+								<th>Jml Bimbingan</th>
+								<th>Jml Pengujian</th>
+								<th>Action</th>
+							</tr>
 						</thead>
 					</table>
 					<br>
@@ -106,7 +106,7 @@
 			<div class="modal-body">
 
 
-            <div class="form-group">
+				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nama</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnama" placeholder="nama ...">
@@ -135,7 +135,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-			<input type="text" id="idStatistic" hidden>
+				<input type="text" id="idStatistic" hidden>
 				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
 				</button>
 				<button onclick="updateData()" type="button" class="btn btn-outline">Update Statistic
@@ -149,25 +149,27 @@
 
 <script>
 	showData()
+
 	function showData() {
 		//datatables
 		table = $('#myData').DataTable({
-			"columnDefs": [ {
-				"targets": 0,
-				"width": "50px"
-			},
+			"columnDefs": [{
+					"targets": 0,
+					"width": "50px"
+				},
 				{
-					"targets": [1,2,3],
+					"targets": [1, 2, 3],
 					"width": "200px"
-				}],
+				}
+			],
 			"ordering": false,
 			"destroy": true,
 			"serverSide": true,
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Statistic/getAll')?>",
-				"async":false,
+				"url": "<?php echo site_url('Statistic/getAll') ?>",
+				"async": false,
 				"type": "POST"
 			},
 
@@ -187,84 +189,87 @@
 			url: "<?php echo base_url('Statistic/addData'); ?>",
 			type: "post",
 			data: {
-				nama:nama,
-				nodosen:nodosen,
-				jmlbbg:jmlbbg,
-				jmlpenguji:jmlpenguji,
+				nama: nama,
+				nodosen: nodosen,
+				jmlbbg: jmlbbg,
+				jmlpenguji: jmlpenguji,
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				// alert(response);
 				location.reload();
 			}
 		});
 
 	}
-	
+
 	function deleteStatistic(id) {
 
-		
+
 
 		$.ajax({
 			url: "<?php echo base_url('Statistic/deleteData'); ?>",
 			type: "post",
 			data: {
-				id:id,
+				id: id,
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				// alert(response);
 				location.reload();
 			}
 		});
 
 	}
-	function showModal(){
+
+	function showModal() {
 		$('#UpdateModal').modal('show');
 	}
+
 	function getOne(id) {
 		$.ajax({
 			url: "<?php echo base_url('Statistic/getOne'); ?>",
 			type: "post",
 			data: {
-				id:id,
+				id: id,
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				response = JSON.parse(response);
-				
-				document.getElementById("updjmlpenguji").value=response[0]['jmlpenguji'];
-				document.getElementById("updjmlbbg").value=response[0]['jmlbbg'];
-				document.getElementById("updnodosen").value=response[0]['nodosen'];
-				document.getElementById("updnama").value=response[0]['nama'];
-				document.getElementById("idStatistic").value=response[0]['id'];
-				
+
+				document.getElementById("updjmlpenguji").value = response[0]['jmlpenguji'];
+				document.getElementById("updjmlbbg").value = response[0]['jmlbbg'];
+				document.getElementById("updnodosen").value = response[0]['nodosen'];
+				document.getElementById("updnama").value = response[0]['nama'];
+				document.getElementById("idStatistic").value = response[0]['id'];
+
 				showModal();
 			}
 		});
 
 	}
+
 	function updateData() {
 
 		var nama = document.getElementById("updnama").value;
 		var id = document.getElementById("idStatistic").value;
-	    var nodosen = document.getElementById("updnodosen").value;
+		var nodosen = document.getElementById("updnodosen").value;
 		var jmlbbg = document.getElementById("updjmlbbg").value;
 		var jmlpenguji = document.getElementById("updjmlpenguji").value;
-		
+
 		$.ajax({
 			url: "<?php echo base_url('Statistic/updateData'); ?>",
 			type: "post",
 			data: {
-				nama:nama,
-				id:id,
-				nodosen:nodosen,
-				jmlbbg:jmlbbg,
-				jmlpenguji:jmlpenguji,
-				
+				nama: nama,
+				id: id,
+				nodosen: nodosen,
+				jmlbbg: jmlbbg,
+				jmlpenguji: jmlpenguji,
+
 			},
 			cache: false,
-			success: function (response) {
+			success: function(response) {
 				// alert(response);
 				location.reload();
 			}

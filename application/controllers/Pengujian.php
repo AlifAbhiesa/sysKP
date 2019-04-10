@@ -38,12 +38,11 @@ class Pengujian extends CI_Controller
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $field->nmmhsw;
+            $row[] = $field->idBmbg;
+            $row[] = $field->idKp;
             $row[] = $field->nrp;
-            $row[] = $field->instansi;
+            $row[] = $field->nama;
             $row[] = $field->judulKp;
-            $row[] = $field->dpmbg;
-            $row[] = $field->jdwlSdng;
             $row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
                 '<button onclick="deletePengujian(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
             $data[] = $row;
@@ -61,20 +60,18 @@ class Pengujian extends CI_Controller
     //add insert code here
     public function addData()
     {
-        $nmmhsw = $_POST['nmmhsw'];
+        $idBmbg = $_POST['idBmbg'];
+        $idKp = $_POST['idKp'];
         $nrp = $_POST['nrp'];
-        $instansi = $_POST['instansi'];
+        $nama = $_POST['nama'];
         $judulKp = $_POST['judulKp'];
-        $dpmbg = $_POST['dpmbg'];
-        $jdwlSdng = $_POST['jdwlSdng'];
 
         $data = array(
-            'nmmhsw' => $nmmhsw,
+            'idBmbg' => $idBmbg,
+            'idKp' => $idKp,
             'nrp' => $nrp,
-            'instansi' => $instansi,
+            'nama' => $nama,
             'judulKp' => $judulKp,
-            'dpmbg' => $dpmbg,
-            'jdwlSdng' => $jdwlSdng,
 
 
         );
@@ -121,21 +118,20 @@ class Pengujian extends CI_Controller
     public function updateData()
     {
         $id = $_POST['id'];
-        $nmmhsw = $_POST['nmmhsw'];
+        $idBmbg = $_POST['idBmbg'];
+        $idKp = $_POST['idKp'];
         $nrp = $_POST['nrp'];
-        $instansi = $_POST['instansi'];
+        $nama = $_POST['nama'];
         $judulKp = $_POST['judulKp'];
-        $dpmbg = $_POST['dpmbg'];
-        $jdwlSdng = $_POST['jdwlSdng'];
 
 
         $data = array(
-            'nmmhsw' => $nmmhsw,
+            'idBmbg' => $idBmbg,
+            'idKp' => $idKp,
             'nrp' => $nrp,
-            'instansi' => $instansi,
+            'nama' => $nama,
             'judulKp' => $judulKp,
-            'dpmbg' => $dpmbg,
-            'jdwlSdng' => $jdwlSdng,
+
         );
 
         $result = $this->Pengujian_model->updateData($id, $data);

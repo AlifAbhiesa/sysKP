@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Apr 2019 pada 05.34
+-- Generation Time: 10 Apr 2019 pada 08.34
 -- Versi Server: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -28,12 +28,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `pengujian` (
   `id` int(11) NOT NULL,
-  `nmmhsw` varchar(50) NOT NULL,
-  `nrp` int(11) NOT NULL,
-  `instansi` varchar(128) NOT NULL,
-  `judulKp` varchar(256) NOT NULL,
-  `dpmbg` varchar(50) NOT NULL,
-  `jdwlSdng` varchar(25) NOT NULL,
+  `idBmbg` int(11) NOT NULL,
+  `idKp` int(11) NOT NULL,
+  `nrp` varchar(128) NOT NULL,
+  `nama` varchar(256) NOT NULL,
+  `judulKp` varchar(50) NOT NULL,
   `createAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `active` enum('Y','N') NOT NULL DEFAULT 'Y'
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -42,10 +41,10 @@ CREATE TABLE IF NOT EXISTS `pengujian` (
 -- Dumping data untuk tabel `pengujian`
 --
 
-INSERT INTO `pengujian` (`id`, `nmmhsw`, `nrp`, `instansi`, `judulKp`, `dpmbg`, `jdwlSdng`, `createAt`, `active`) VALUES
-(1, '12', 12, '12', 'undefined', '1', '1', '2019-04-04 03:20:45', 'N'),
-(2, '', 0, '', '1', '', '', '2019-04-04 03:21:33', 'N'),
-(3, '12', 12, '12', '12', '12', '12', '2019-04-04 03:25:05', 'Y');
+INSERT INTO `pengujian` (`id`, `idBmbg`, `idKp`, `nrp`, `nama`, `judulKp`, `createAt`, `active`) VALUES
+(1, 12, 12, '12', 'undefined', '1', '2019-04-04 03:20:45', 'N'),
+(2, 0, 0, '', '1', '', '2019-04-04 03:21:33', 'N'),
+(3, 12, 12, '12', '12', '12', '2019-04-04 03:25:05', 'Y');
 
 --
 -- Indexes for dumped tables

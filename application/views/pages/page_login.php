@@ -99,13 +99,17 @@
             data: {username: username, password: password},
             cache: false,
             success: function (response) {
-                if(response == "Ok"){
-                    // swal("Good job!", "You clicked the button!", "success");
-                    window.location.href = "<?php echo base_url()?>Dashboard";
-                }else{
-                    // swal("Something Error", "Username atau Password Salah", "error");
-                    alert("username atau password salah");
-                }
+                if(response == "Mahasiswa"){
+                    window.location.href = "<?php echo base_url()?>Pengajuan";
+                }else if(response == "Dosen"){
+					window.location.href = "<?php echo base_url()?>MahasiswaBimbingan";
+                }else if(response == "Dosen Wali"){
+					window.location.href = "<?php echo base_url()?>PengajuanWali";
+				}else if(response == "Koordinator"){
+					window.location.href = "<?php echo base_url()?>PengajuanKoordinator";
+				}else{
+					window.location.href = "<?php echo base_url()?>Mahasiswa";
+				}
             }
         });
     }

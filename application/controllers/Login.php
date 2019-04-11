@@ -19,13 +19,33 @@
             $response = $this->Login_model->login($username, $password);
             //Saving Session
             if(count($response) > 0){
+
+            	// Level 1 = mahasiswa
+				// Level 2 = dosen
+				// Level 3 = Dosen wali
+				// Level 4 = Koordinator
+
 				$loginData2 = array(
 					"username" => $response[0]['username'],
 					"level" => $response[0]['level'],
-					"idUser" => $response[0]['id']
+					"idLogin" => $response[0]['idLogin'],
+					"idReference" => $response[0]['idReference']
 				);
+
+
 				$this->session->set_userdata($loginData2);
-				echo "Ok";
+				if($this->session->userdata('level') == 1){
+					echo "Mahasiswa";
+				}elseif($this->session->userdata('level') == 2){
+					echo "Dosen";
+				}elseif($this->session->userdata('level') == 3){
+					echo "Dosen Wali";
+				}elseif ($this->session->userdata('level') == 4){
+					echo "Koordinator";
+				}else{
+					echo "Admin";
+				}
+
             }else{
                 echo "Failed";
             }

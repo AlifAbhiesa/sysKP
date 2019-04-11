@@ -14,7 +14,6 @@ class Login_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->database();
-
 	}
 
 	public function login($username, $password)
@@ -26,7 +25,4 @@ class Login_model extends CI_Model
 		//$login = $this->db->query("select * from m_access where uName = '$username' and uPass = '$password'")->result_array();
 		return $login;
 	}
-
-
-
 }

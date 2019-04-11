@@ -38,13 +38,8 @@ class Bimbingan extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->nrp;
-			$row[] = $field->nama;
-			$row[] = $field->noHp;
-			$row[] = $field->tanggalDftr;
-			$row[] = $field->tempatUslnKp;
-			$row[] = $field->tahunAjrn;
-			$row[] = $field->semester;
+			$row[] = $field->id_bimbingan;
+			$row[] = $field->materi;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
 				'<button onclick="deleteBbg(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
@@ -63,23 +58,12 @@ class Bimbingan extends CI_Controller
 	//add insert code here
 	public function addData()
 	{
-		$nrp = $_POST['nrp'];
-		$nama = $_POST['nama'];
-		$noHp = $_POST['noHp'];
-		$tanggalDftr = $_POST['tanggalDftr'];
-		$tempatUslnKp = $_POST['tempatUslnKp'];
-		$tahunAjrn = $_POST['tahunAjrn'];
-		$semester = $_POST['semester'];
-
+		$nrp = $_POST['id_bimbingan'];
+		$nama = $_POST['materi'];
 
 		$data = array(
-			'nrp' => $nrp,
-			'nama' => $nama,
-			'noHp' => $noHp,
-			'tanggalDftr' => $tanggalDftr,
-			'tempatUslnKp' => $tempatUslnKp,
-			'tahunAjrn' => $tahunAjrn,
-			'semester' => $semester,
+			'id_bimbingan' => $id_bimbingan,
+			'materi' => $materi,
 
 
 		);
@@ -124,24 +108,13 @@ class Bimbingan extends CI_Controller
 	}
 	public function updateData()
 	{
-		$nrp = $_POST['nrp'];
+		$id_bimbingan = $_POST['id_bimbingan'];
 		$id = $_POST['id'];
-		$nama = $_POST['nama'];
-		$noHp = $_POST['noHp'];
-		$tanggalDftr = $_POST['tanggalDftr'];
-		$tempatUslnKp = $_POST['tempatUslnKp'];
-		$tahunAjrn = $_POST['tahunAjrn'];
-		$semester = $_POST['semester'];
-
+		$materi = $_POST['materi'];
 
 		$data = array(
-			'nrp' => $nrp,
-			'nama' => $nama,
-			'noHp' => $noHp,
-			'tanggalDftr' => $tanggalDftr,
-			'tempatUslnKp' => $tempatUslnKp,
-			'tahunAjrn' => $tahunAjrn,
-			'semester' => $semester,
+			'id_bimbingan' => $id_bimbingan,
+			'materi' => $materi,
 		);
 
 		$result = $this->Bimbingan_model->updateData($id, $data);

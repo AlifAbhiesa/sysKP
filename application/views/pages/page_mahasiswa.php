@@ -219,7 +219,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="text" id="idDosen" hidden>
+                <input type="text" id="idMahasiswa" hidden>
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
                 </button>
                 <button onclick="updateData()" type="button" class="btn btn-outline">Update
@@ -295,7 +295,7 @@
         });
     }
 
-    function deleteDosen(id) {
+    function deleteMahasiswa(id) {
 
 
 
@@ -336,9 +336,9 @@
                 document.getElementById("updnama").value = response[0]['nama'];
                 document.getElementById("updnrp").value = response[0]['nrp'];
                 document.getElementById("updtanggalDftr").value = response[0]['tanggalDftr'];
-                document.getElementById("updsemester").value = response[0]['semester']
-                document.getElementById("updtempatUslnKp").value = response[0]['tempatUslnKp']
-                document.getElementById("idDosen").value = response[0]['id'];
+                document.getElementById("updsemester").value = response[0]['semester'];
+                document.getElementById("updtempatUslnKp").value = response[0]['tempatUslnKp'];
+                document.getElementById("idMahasiswa").value = response[0]['id'];
 
                 showModal();
             }
@@ -349,7 +349,7 @@
     function updateData() {
 
         var nrp = document.getElementById("updnrp").value;
-        var id = document.getElementById("idDosen").value;
+        var id = document.getElementById("idMahasiswa").value;
         var nama = document.getElementById("updnama").value;
         var noHp = document.getElementById("updnoHp").value;
         var dwali = document.getElementById("upddwali").value;

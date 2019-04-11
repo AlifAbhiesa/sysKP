@@ -29,27 +29,19 @@
 		<li class="<?php if ($this->uri->segment(1)==='Pengajuan'){
 			echo 'active';
 		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>Mahasiswa" >
-				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Mahasiswa</span>
+			<a class="nav-link" href="<?php echo base_url()?>Pengajuan" >
+				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Pengajuan</span>
 			</a>
 		</li>
 
-
-        <li class="<?php if ($this->uri->segment(1)==='Bimbingan'){
+		<li class="<?php if ($this->uri->segment(1)==='JadwalSidang'){
 			echo 'active';
 		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>Bimbingan" >
-				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Dosen Bimbingan</span>
+			<a class="nav-link" href="<?php echo base_url()?>JadwalSidang" >
+				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Jadwal Sidang</span>
 			</a>
 		</li>
 
-		<li class="<?php if ($this->uri->segment(1)==='Sidangkp'){
-			echo 'active';
-		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>Sidangkp" >
-				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Sidangkp</span>
-			</a>
-		</li>
 
 
     </ul>

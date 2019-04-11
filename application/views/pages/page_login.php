@@ -103,13 +103,18 @@
             cache: false,
 
             success: function(response) {
-                if (response == "Ok") {
+                if (response == "Mahasiswa") {
                     // swal("Good job!", "You clicked the button!", "success");
                     window.location.href = "<?php echo base_url() ?>Dashboard";
-                } else {
-                    // swal("Something Error", "Username atau Password Salah", "error");
-                    alert("username atau password salah");
-                }
+                } else if(response == "Dosen") {
+					window.location.href = "<?php echo base_url() ?>Dashboard";
+                }else if(response == "Koordinator") {
+					window.location.href = "<?php echo base_url() ?>Dashboard";
+				}else if(response == "Dosen Wali") {
+					window.location.href = "<?php echo base_url() ?>Dashboard";
+				}else if(response == "Admin") {
+					window.location.href = "<?php echo base_url() ?>Dashboard";
+				}
             }
         });
     }

@@ -38,13 +38,10 @@ class Bimbingan extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->nrp;
-			$row[] = $field->nama;
-			$row[] = $field->judulKp;
-			$row[] = $field->pembimbingPrshn;
-			$row[] = $field->pembimbingDsn;
+			$row[] = $field->id_bimbingan;
+			$row[] = $field->materi;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteBimbingan(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+				'<button onclick="deleteBbg(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 
@@ -61,50 +58,45 @@ class Bimbingan extends CI_Controller
 	//add insert code here
 	public function addData()
 	{
-		$nrp = $_POST['nrp'];
-		$nama = $_POST['nama'];
-		$judulKp = $_POST['judulKp'];
-		$pembimbingPrshn = $_POST['pembimbingPrshn'];
-		$pembimbingDsn = $_POST['pembimbingDsn'];
+		$nrp = $_POST['id_bimbingan'];
+		$nama = $_POST['materi'];
 
 		$data = array(
-			'nrp' => $nrp,
-			'nama' => $nama,
-			'judulKp' => $judulKp,
-			'pembimbingPrshn' => $pembimbingPrshn,
-			'pembimbingDsn' => $pembimbingDsn,
+			'id_bimbingan' => $id_bimbingan,
+			'materi' => $materi,
+
 
 		);
 
 		$result = $this->Bimbingan_model->addData($data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 	public function deleteData()
 	{
 		$id = $_POST['id'];
-		
+
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Bimbingan_model->updateData($id,$data);
+		$result = $this->Bimbingan_model->updateData($id, $data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
-		public function getOne()
+	public function getOne()
 	{
 		$id = $_POST['id'];
-		
+
 
 		$data = array(
 			'active' => 'N',
@@ -114,33 +106,25 @@ class Bimbingan extends CI_Controller
 
 		echo json_encode($result);
 	}
-		public function updateData()
+	public function updateData()
 	{
-		$nrp = $_POST['nrp'];
+		$id_bimbingan = $_POST['id_bimbingan'];
 		$id = $_POST['id'];
-		$nama = $_POST['nama'];
-		$judulKp = $_POST['judulKp'];
-		$pembimbingPrshn = $_POST['pembimbingPrshn'];
-		$pembimbingDsn= $_POST['pembimbingDsn'];
-		
+		$materi = $_POST['materi'];
 
 		$data = array(
-			'nrp' => $nrp,
-			'nama' => $nama,
-			'judulKp' => $judulKp,
-			'pembimbingPrshn' => $pembimbingPrshn,
-			'pembimbingDsn' => $pembimbingDsn,
+			'id_bimbingan' => $id_bimbingan,
+			'materi' => $materi,
 		);
 
-		$result = $this->Bimbingan_model->updateData($id,$data);
+		$result = $this->Bimbingan_model->updateData($id, $data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 }
 
-?>
-
+ 

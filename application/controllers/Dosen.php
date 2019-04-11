@@ -38,11 +38,13 @@ class Dosen extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->nip;
-			$row[] = $field->nidn;
+			$row[] = $field->nrp;
 			$row[] = $field->nama;
-			$row[] = $field->urutanAkademik;
 			$row[] = $field->noHp;
+			$row[] = $field->tanggalDftr;
+			$row[] = $field->tempatUslnKp;
+			$row[] = $field->tahunAjrn;
+			$row[] = $field->semester;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
 				'<button onclick="deleteDosen(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
@@ -61,18 +63,24 @@ class Dosen extends CI_Controller
 	//add insert code here
 	public function addData()
 	{
-		$nip = $_POST['nip'];
-		$nidn = $_POST['nidn'];
+		$nrp = $_POST['nrp'];
 		$nama = $_POST['nama'];
-		$urutanAkademik = $_POST['urutanAkademik'];
 		$noHp = $_POST['noHp'];
+		$tanggalDftr = $_POST['tanggalDftr'];
+		$tempatUslnKp = $_POST['tempatUslnKp'];
+		$tahunAjrn = $_POST['tahunAjrn'];
+		$semester = $_POST['semester'];
 
 		$data = array(
-			'nip' => $nip,
-			'nidn' => $nidn,
+			'nrp' => $nrp,
 			'nama' => $nama,
-			'urutanAkademik' => $urutanAkademik,
 			'noHp' => $noHp,
+			'tanggalDftr' => $tanggalDftr,
+			'tempatUslnKp' => $tempatUslnKp,
+			'tahunAjrn' => $tahunAjrn,
+			'semester' => $semester,
+
+
 
 		);
 
@@ -116,20 +124,24 @@ class Dosen extends CI_Controller
 	}
 		public function updateData()
 	{
-		$nip = $_POST['nip'];
+		$nrp = $_POST['nrp'];
 		$id = $_POST['id'];
-		$nidn = $_POST['nidn'];
 		$nama = $_POST['nama'];
-		$urutanAkademik= $_POST['urutanAkademik'];
-		$noHp= $_POST['noHp'];
-		
+		$noHp = $_POST['noHp'];
+		$tanggalDftr = $_POST['tanggalDftr'];
+		$tempatUslnKp = $_POST['tempatUslnKp'];
+		$tahunAjrn = $_POST['tahunAjrn'];
+		$semester = $_POST['semester'];
+
 
 		$data = array(
-			'nip' => $nip,
-			'nidn' => $nidn,
+			'nrp' => $nrp,
 			'nama' => $nama,
-			'urutanAkademik' => $urutanAkademik,
 			'noHp' => $noHp,
+			'tanggalDftr' => $tanggalDftr,
+			'tempatUslnKp' => $tempatUslnKp,
+			'tahunAjrn' => $tahunAjrn,
+			'semester' => $semester,
 		);
 
 		$result = $this->Dosen_model->updateData($id,$data);
@@ -141,5 +153,6 @@ class Dosen extends CI_Controller
 		}
 	}
 }
+
 ?>
 

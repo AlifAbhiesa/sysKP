@@ -41,11 +41,14 @@ class Mahasiswa extends CI_Controller
 			$row[] = $field->nrp;
 			$row[] = $field->nama;
 			$row[] = $field->noHp;
-			$row[] = $field->perusahaan;
-			$row[] = $field->dosenWali;
-			$row[] = $field->dosenPmbg;
+			$row[] = $field->dwali;
+			$row[] = $field->dpmbg;
+			$row[] = $field->tanggalDftr;
+			$row[] = $field->tempatUslnKp;
+			$row[] = $field->tahunAjrn;
+			$row[] = $field->semester;
 			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteMahasiswa(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+				'<button onclick="deleteDosen(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 
@@ -58,55 +61,64 @@ class Mahasiswa extends CI_Controller
 		//JSON output
 		echo json_encode($output);
 	}
+
 	//add insert code here
 	public function addData()
 	{
 		$nrp = $_POST['nrp'];
 		$nama = $_POST['nama'];
 		$noHp = $_POST['noHp'];
-		$perusahaan = $_POST['perusahaan'];
-		$dosenWali = $_POST['dosenWali'];
-		$dosenPmbg= $_POST['dosenPmbg'];
+		$dwali = $_POST['dwali'];
+		$dpmbg = $_POST['dpmbg'];
+		$tanggalDftr = $_POST['tanggalDftr'];
+		$tempatUslnKp = $_POST['tempatUslnKp'];
+		$tahunAjrn = $_POST['tahunAjrn'];
+		$semester = $_POST['semester'];
 
 		$data = array(
 			'nrp' => $nrp,
 			'nama' => $nama,
 			'noHp' => $noHp,
-			'perusahaan' => $perusahaan,
-			'dosenWali' => $dosenWali,
-			'dosenPmbg' => $dosenPmbg,
+			'dwali' => $dwali,
+			'dpmbg' => $dpmbg,
+			'tanggalDftr' => $tanggalDftr,
+			'tempatUslnKp' => $tempatUslnKp,
+			'tahunAjrn' => $tahunAjrn,
+			'semester' => $semester,
+
+
 
 		);
 
 		$result = $this->Mahasiswa_model->addData($data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 	public function deleteData()
 	{
 		$id = $_POST['id'];
-		
+
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Mahasiswa_model->updateData($id,$data);
+		$result = $this->Mahasiswa_model->updateData($id, $data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 	public function getOne()
 	{
 		$id = $_POST['id'];
-		
+
 
 		$data = array(
 			'active' => 'N',
@@ -116,33 +128,40 @@ class Mahasiswa extends CI_Controller
 
 		echo json_encode($result);
 	}
-		public function updateData()
+	public function updateData()
 	{
 		$nrp = $_POST['nrp'];
 		$id = $_POST['id'];
 		$nama = $_POST['nama'];
 		$noHp = $_POST['noHp'];
-		$perusahaan = $_POST['perusahaan'];
-		$dosenWali = $_POST['dosenWali'];
-		$dosenPmbg = $_POST['dosenPmbg'];
-		
+		$dwali = $_POST['dwali'];
+		$dpmbg = $_POST['dpmbg'];
+		$tanggalDftr = $_POST['tanggalDftr'];
+		$tempatUslnKp = $_POST['tempatUslnKp'];
+		$tahunAjrn = $_POST['tahunAjrn'];
+		$semester = $_POST['semester'];
+
 
 		$data = array(
 			'nrp' => $nrp,
 			'nama' => $nama,
-			'noHp' => noHp,
-			'perusahaan' => $perusahaan,
-			'dosenWali' => $dosenWali,
-			'dosenPmbg' => $dosenPmbg,
+			'noHp' => $noHp,
+			'dwali' => $dwali,
+			'dpmbg' => $dpmbg,
+			'tanggalDftr' => $tanggalDftr,
+			'tempatUslnKp' => $tempatUslnKp,
+			'tahunAjrn' => $tahunAjrn,
+			'semester' => $semester,
 		);
 
-		$result = $this->Mahasiswa_model->updateData($id,$data);
+		$result = $this->Mahasiswa_model->updateData($id, $data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 }
-?>
+
+ 

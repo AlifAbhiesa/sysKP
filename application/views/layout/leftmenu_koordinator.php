@@ -35,59 +35,11 @@
             </a>
         </li>
 
-        <li class="<?php if ($this->uri->segment(1) === 'Pengujian') {
-                        echo 'active';
-                    } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>Pengujian">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Pengujian</span>
-            </a>
-        </li>
-
-        <li class="<?php if ($this->uri->segment(1) === 'Statistic') {
-                        echo 'active';
-                    } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>Statistic">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Statistic</span>
-            </a>
-        </li>
-
-        <li class="<?php if ($this->uri->segment(1) === 'Dosen') {
-                        echo 'active';
-                    } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>Dosen">
-                <i class="menu-icon fa fa-user " style="color: #3c8dbc"></i> <span>&ensp;Dosen</span>
-            </a>
-        </li>
-
-        <li class="<?php if ($this->uri->segment(1) === 'Bimbingan') {
-                        echo 'active';
-                    } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>Bimbingan">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Dosen Bimbingan</span>
-            </a>
-        </li>
-
-        <li class="<?php if ($this->uri->segment(1) === 'Perusahaan') {
-                        echo 'active';
-                    } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>Perusahaan">
-                <i class="menu-icon fa fa-building" style="color: #3c8dbc"></i> <span>&ensp;Perusahaan</span>
-            </a>
-        </li>
-
         <li class="<?php if ($this->uri->segment(1) === 'Sidangkp') {
                         echo 'active';
                     } ?> nav-item">
             <a class="nav-link" href="<?php echo base_url() ?>Sidangkp">
                 <i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Sidangkp</span>
-            </a>
-        </li>
-
-        <li class="<?php if ($this->uri->segment(1) === 'User') {
-                        echo 'active';
-                    } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>User">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;User</span>
             </a>
         </li>
 

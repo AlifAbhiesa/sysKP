@@ -19,15 +19,14 @@
                 <div class="box-body">
                     <hr>
                     <table class="table table-bordered table-primary dt-responsive" id="myData" width="100%">
-                        <thead class="thead-dark">>
+                        <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
+                                <th>Id Bimbingan</th>
+                                <th>Id Kp</th>
+                                <th>NRP</th>
                                 <th>Nama</th>
-                                <th>nrp</th>
-                                <th>Instansi</th>
                                 <th>Judul Kp</th>
-                                <th>D.Pembimbing</th>
-                                <th>Jadwal Sidang Kp</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -57,22 +56,29 @@
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Nama</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nmmhsw" placeholder="Nama Mahasiswa...">
+                        <label>Id Bimbingan</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="idBmbg" placeholder="Id Bimbingan...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="md-input-wrapper">
+                        <label>Id Kp</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="idKp" placeholder="Id Kerja Praktek ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
                         <label>NRP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="nrp ...">
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="Nomor Registrasi Pokok ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Instansi</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="instansi" placeholder="Instansi ...">
+                        <label>Nama</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="Nama ...">
                     </div>
                 </div>
 
@@ -81,22 +87,11 @@
                         <label>Judul Kp</label>
                         <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="Judul Kp ...">
                     </div>
-                </div>
+</div>
 
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>D.pembimbing</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="dpmbg" placeholder="Dosen Pembimbing ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Jadwal Sidang Kp</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="jdwlSdng" placeholder="Jadwal Sidang Kerja Praktik ...">
-                    </div>
-                </div>
             </div>
+
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
                 </button>
@@ -120,48 +115,42 @@
             </div>
             <div class="modal-body">
 
+            <div class="form-group">
+                    <div class="md-input-wrapper">
+                        <label>Id Bimbingan</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updidBmbg" placeholder="Id Bimbingan...">
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Nama</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnmmhsw" placeholder="Nama Mahasiswa ...">
+                        <label>Id Kp</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updidKp" placeholder="Id Kerja Praktek ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
                         <label>NRP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="nrp ...">
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="Nomor Registrasi Pokok ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Instansi</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updinstansi" placeholder="Instansi ...">
+                        <label>Nama</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnama" placeholder="Nama ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
                         <label>Judul Kp</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjudulKp" placeholder="Judul Kerja Praktik ...">
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjudulKp" placeholder="judul kerja praktik ...">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>D.pembimbing</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="upddpmbg" placeholder="Dosen Pembimbing ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Jadwal Sidang Kp</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjdwlSdng" placeholder="Jadwal Sidang Kerja Praktik ...">
-                    </div>
-                </div>
+                
             </div>
             <div class="modal-footer">
                 <input type="text" id="idPengujian" hidden>
@@ -209,23 +198,21 @@
 
     function AddData() {
 
-        var nmmhsw = document.getElementById("nmmhsw").value;
+        var idBmbg = document.getElementById("idBmbg").value;
+        var idKp = document.getElementById("idKp").value;
         var nrp = document.getElementById("nrp").value;
-        var instansi = document.getElementById("instansi").value;
+        var nama = document.getElementById("nama").value;
         var judulKp = document.getElementById("judulKp").value;
-        var dpmbg = document.getElementById("dpmbg").value;
-        var jdwlSdng = document.getElementById("jdwlSdng").value;
 
         $.ajax({
             url: "<?php echo base_url('Pengujian/addData'); ?>",
             type: "post",
             data: {
-                nmmhsw: nmmhsw,
+                idBmbg: idBmbg,
+                idKp: idKp,
                 nrp: nrp,
-                instansi: instansi,
+                nama: nama,
                 judulKp: judulKp,
-                dpmbg: dpmbg,
-                jdwlSdng: jdwlSdng,
             },
             cache: false,
             success: function(response) {
@@ -267,12 +254,11 @@
             cache: false,
             success: function(response) {
                 response = JSON.parse(response);
-                document.getElementById("updjdwlSdng").value = response[0]['jdwlSdng'];
-                document.getElementById("upddpmbg").value = response[0]['dpmbg'];
+                document.getElementById("updidBmbg").value = response[0]['idBmbg'];
                 document.getElementById("updjudulKp").value = response[0]['judulKp'];
-                document.getElementById("updinstansi").value = response[0]['instansi'];
+                document.getElementById("updnama").value = response[0]['nama'];
                 document.getElementById("updnrp").value = response[0]['nrp'];
-                document.getElementById("updnmmhsw").value = response[0]['nmmhsw'];
+                document.getElementById("updidKp").value = response[0]['idKp'];
                 document.getElementById("idPengujian").value = response[0]['id'];
 
                 showModal();
@@ -284,25 +270,23 @@
     function updateData() {
 
         var id = document.getElementById("idPengujian").value;
-        var nmmhsw = document.getElementById("updnmmhsw").value;
+        var nama = document.getElementById("updnama").value;
         var nrp = document.getElementById("updnrp").value;
-        var instansi = document.getElementById("updinstansi").value;
+        var idKp = document.getElementById("updidKp").value;
         var judulKp = document.getElementById("updjudulKp").value;
-        var dpmbg = document.getElementById("upddpmbg").value;
-        var jdwlSdng = document.getElementById("updjdwlSdng").value;
-
+        var idBmbg = document.getElementById("updidBmbg").value;
+        
         $.ajax({
             url: "<?php echo base_url('Pengujian/updateData'); ?>",
             type: "post",
             data: {
                 id: id,
-                nmmhsw: nmmhsw,
+                idBmbg: idBmbg,
+                idKp: idKp,
                 nrp: nrp,
-                instansi: instansi,
+                nama: nama,
                 judulKp: judulKp,
-                dpmbg: dpmbg,
-                jdwlSdng: jdwlSdng,
-
+                
             },
             cache: false,
             success: function(response) {

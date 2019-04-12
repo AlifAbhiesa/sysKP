@@ -38,17 +38,13 @@ class Mahasiswa extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->nrp;
+			$row[] = $field->idDosenWali;
 			$row[] = $field->nama;
-			$row[] = $field->noHp;
-			$row[] = $field->dwali;
-			$row[] = $field->dpmbg;
-			$row[] = $field->tanggalDftr;
-			$row[] = $field->tempatUslnKp;
-			$row[] = $field->tahunAjrn;
-			$row[] = $field->semester;
-			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteDosen(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+			$row[] = $field->nrp;
+			$row[] = $field->nohp;
+			$row[] = $field->transkrip;
+			$row[] = '<button onclick="getOne(\'' . $field->idMahasiswa . '\')" idMahasiswa="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
+				'<button onclick="deleteMahasiswa(\'' . $field->idMahasiswa . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 
@@ -65,27 +61,18 @@ class Mahasiswa extends CI_Controller
 	//add insert code here
 	public function addData()
 	{
-		$nrp = $_POST['nrp'];
+		$idDosenWali = $_POST['idDosenWali'];
 		$nama = $_POST['nama'];
-		$noHp = $_POST['noHp'];
-		$dwali = $_POST['dwali'];
-		$dpmbg = $_POST['dpmbg'];
-		$tanggalDftr = $_POST['tanggalDftr'];
-		$tempatUslnKp = $_POST['tempatUslnKp'];
-		$tahunAjrn = $_POST['tahunAjrn'];
-		$semester = $_POST['semester'];
+		$nrp = $_POST['nrp'];
+		$nohp = $_POST['nohp'];
+		$transkrip = $_POST['transkrip'];
 
 		$data = array(
-			'nrp' => $nrp,
+			'idDosenWali' => $idDosenWali,
 			'nama' => $nama,
-			'noHp' => $noHp,
-			'dwali' => $dwali,
-			'dpmbg' => $dpmbg,
-			'tanggalDftr' => $tanggalDftr,
-			'tempatUslnKp' => $tempatUslnKp,
-			'tahunAjrn' => $tahunAjrn,
-			'semester' => $semester,
-
+			'nrp' => $nrp,
+			'nohp' => $nohp,
+			'transkrip' => $transkrip,
 
 
 		);
@@ -100,14 +87,14 @@ class Mahasiswa extends CI_Controller
 	}
 	public function deleteData()
 	{
-		$id = $_POST['id'];
+		$idMahasiswa = $_POST['idMahasiswa'];
 
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Mahasiswa_model->updateData($id, $data);
+		$result = $this->Mahasiswa_model->updateData($idMahasiswa, $data);
 
 		if ($result > 0) {
 			echo "Ok";
@@ -117,44 +104,36 @@ class Mahasiswa extends CI_Controller
 	}
 	public function getOne()
 	{
-		$id = $_POST['id'];
+		$idMahasiswa = $_POST['idMahasiswa'];
 
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Mahasiswa_model->getOne($id);
+		$result = $this->Mahasiswa_model->getOne($idMahasiswa);
 
 		echo json_encode($result);
 	}
 	public function updateData()
 	{
 		$nrp = $_POST['nrp'];
-		$id = $_POST['id'];
+		$idMahasiswa = $_POST['idMahasiswa'];
+		$idDosenWali = $_POST['idDosenWali'];
 		$nama = $_POST['nama'];
-		$noHp = $_POST['noHp'];
-		$dwali = $_POST['dwali'];
-		$dpmbg = $_POST['dpmbg'];
-		$tanggalDftr = $_POST['tanggalDftr'];
-		$tempatUslnKp = $_POST['tempatUslnKp'];
-		$tahunAjrn = $_POST['tahunAjrn'];
-		$semester = $_POST['semester'];
-
+		$nohp = $_POST['nohp'];
+		$transkrip = $_POST['transkrip'];
 
 		$data = array(
-			'nrp' => $nrp,
+			'idDosenWali' => $idDosenWali,
 			'nama' => $nama,
-			'noHp' => $noHp,
-			'dwali' => $dwali,
-			'dpmbg' => $dpmbg,
-			'tanggalDftr' => $tanggalDftr,
-			'tempatUslnKp' => $tempatUslnKp,
-			'tahunAjrn' => $tahunAjrn,
-			'semester' => $semester,
+			'nrp' => $nrp,
+			'nohp' => $nohp,
+			'transkrip' => $transkrip,
+
 		);
 
-		$result = $this->Mahasiswa_model->updateData($id, $data);
+		$result = $this->Mahasiswa_model->updateData($idMahasiswa, $data);
 
 		if ($result > 0) {
 			echo "Ok";
@@ -163,5 +142,3 @@ class Mahasiswa extends CI_Controller
 		}
 	}
 }
-
- 

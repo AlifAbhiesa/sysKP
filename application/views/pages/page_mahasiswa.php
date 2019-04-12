@@ -19,18 +19,14 @@
                 <div class="box-body">
                     <hr>
                     <table class="table table-bordered table-primary dt-responsive" id="myData" width="100%">
-                        <thead class="thead-dark">>
+                        <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
+                                <th>ID Dosen Wali</th>
                                 <th>NRP</th>
                                 <th>Nama</th>
                                 <th>No HP</th>
-                                <th>D.Wali</th>
-                                <th>D.Pembimbing</th>
-                                <th>Tanggal Daftar</th>
-                                <th>Tempat Usulan KP</th>
-                                <th>Tahun Ajaran</th>
-                                <th>Semester</th>
+                                <th>Transkrip</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -59,11 +55,10 @@
             </div>
             <div class="modal-body">
 
-
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>NRP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="nrp ...">
+                        <label>ID Dosen Wali</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="idDosenWali" placeholder="Id dosen wali ...">
                     </div>
                 </div>
 
@@ -77,56 +72,25 @@
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
+                        <label>NRP</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="nomer registrasi pokok ...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="md-input-wrapper">
                         <label>No HP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="noHp" placeholder="No Hp ...">
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nohp" placeholder="No Hp ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>D.Wali</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="dwali" placeholder="Dosen Wali ...">
+                        <label>Transkrip</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="transkrip" placeholder="transkrip ...">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>D.Pembimbing</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="dpmbg" placeholder="Dosen Pembimbing ...">
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Tanggal Daftar</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tanggalDftr" placeholder="tanggal Daftar ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Tempat Usulan KP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tempatUslnKp" placeholder="Tempat Usulan KP ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Tahun Ajaran</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tahunAjrn" placeholder="Tahun Ajaran ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label class="border-bottom border-gray pb-2">Semester</label>
-                        <select class="form-control" id="semester">
-                            <option value="Ganjil">Ganjil</option>
-                            <option value="Genap">Genap</option>
-                        </select>
-                    </div>
-                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
@@ -151,13 +115,13 @@
             </div>
             <div class="modal-body">
 
-
-                <div class="form-group">
+            <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>NRP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="nrp ...">
+                        <label>ID Dosen Wali</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updidDosenWali" placeholder="Id dosen wali ...">
                     </div>
                 </div>
+
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
@@ -168,55 +132,25 @@
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
+                        <label>NRP</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="nomer registrasi pokok ...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="md-input-wrapper">
                         <label>No HP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnoHp" placeholder="No Hp ...">
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnohp" placeholder="No Hp ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>D.Wali</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="upddwali" placeholder="Dosen Wali ...">
+                        <label>Transkrip</label>
+                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtranskrip" placeholder="transkrip ...">
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>D.Pembimbing</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="upddpmbg" placeholder="Dosen Pembimbing ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Tanggal Daftar</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtanggalDftr" placeholder="tanggal Daftar ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Tempat Usulan KP</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtempatUslnKp" placeholder="Tempat Usulan KP ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Tahun Ajaran</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtahunAjrn" placeholder="Tahun Ajaran ...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label class="border-bottom border-gray pb-2">Semester</label>
-                        <select class="form-control" id="updsemester">
-                            <option value="Ganjil">Ganjil</option>
-                            <option value="Genap">Genap</option>
-                        </select>
-                    </div>
-                </div>
+               
             </div>
             <div class="modal-footer">
                 <input type="text" id="idMahasiswa" hidden>
@@ -263,29 +197,21 @@
 
     function AddData() {
 
-        var nrp = document.getElementById("nrp").value;
+        var idDosenWali = document.getElementById("idDosenWali").value;
         var nama = document.getElementById("nama").value;
-        var noHp = document.getElementById("noHp").value;
-        var dwali = document.getElementById("dwali").value;
-        var dpmbg = document.getElementById("dpmbg").value;
-        var tanggalDftr = document.getElementById("tanggalDftr").value;
-        var tempatUslnKp = document.getElementById("tempatUslnKp").value;
-        var tahunAjrn = document.getElementById("tahunAjrn").value;
-        var semester = document.getElementById("semester").value;
+        var nrp = document.getElementById("nrp").value;
+        var nohp = document.getElementById("nohp").value;
+        var transkrip = document.getElementById("transkrip").value;
 
         $.ajax({
             url: "<?php echo base_url('Mahasiswa/addData'); ?>",
             type: "post",
             data: {
-                nrp: nrp,
+                idDosenWali: idDosenWali,
                 nama: nama,
-                noHp: noHp,
-                dwali: dwali,
-                dpmbg: dpmbg,
-                tanggalDftr: tanggalDftr,
-                tempatUslnKp: tempatUslnKp,
-                tahunAjrn: tahunAjrn,
-                semester: semester,
+                nrp: nrp,
+                nohp: nohp,
+                transkrip: transkrip,
             },
             cache: false,
             success: function(response) {
@@ -295,7 +221,7 @@
         });
     }
 
-    function deleteMahasiswa(id) {
+    function deleteMahasiswa(idMahasiswa) {
 
 
 
@@ -303,7 +229,7 @@
             url: "<?php echo base_url('Mahasiswa/deleteData'); ?>",
             type: "post",
             data: {
-                id: id,
+                idMahasiswa: idMahasiswa,
             },
             cache: false,
             success: function(response) {
@@ -318,27 +244,23 @@
         $('#UpdateModal').modal('show');
     }
 
-    function getOne(id) {
+    function getOne(idMahasiswa) {
         $.ajax({
             url: "<?php echo base_url('Mahasiswa/getOne'); ?>",
             type: "post",
             data: {
-                id: id,
+                idMahasiswa: idMahasiswa,
             },
             cache: false,
             success: function(response) {
                 response = JSON.parse(response);
 
-                document.getElementById("upddwali").value = response[0]['dwali'];
-                document.getElementById("upddpmbg").value = response[0]['dpmbg'];
-                document.getElementById("updnoHp").value = response[0]['noHp'];
-                document.getElementById("updtahunAjrn").value = response[0]['tahunAjrn'];
+                document.getElementById("updtranskrip").value = response[0]['transkrip'];
+                document.getElementById("updidDosenWali").value = response[0]['idDosenWali'];
+                document.getElementById("updnohp").value = response[0]['nohp'];
                 document.getElementById("updnama").value = response[0]['nama'];
                 document.getElementById("updnrp").value = response[0]['nrp'];
-                document.getElementById("updtanggalDftr").value = response[0]['tanggalDftr'];
-                document.getElementById("updsemester").value = response[0]['semester'];
-                document.getElementById("updtempatUslnKp").value = response[0]['tempatUslnKp'];
-                document.getElementById("idMahasiswa").value = response[0]['id'];
+                document.getElementById("idMahasiswa").value = response[0]['idMahasiswa'];
 
                 showModal();
             }
@@ -349,31 +271,22 @@
     function updateData() {
 
         var nrp = document.getElementById("updnrp").value;
-        var id = document.getElementById("idMahasiswa").value;
+        var idMahasiswa = document.getElementById("idMahasiswa").value;
         var nama = document.getElementById("updnama").value;
-        var noHp = document.getElementById("updnoHp").value;
-        var dwali = document.getElementById("upddwali").value;
-        var dpmbg = document.getElementById("upddpmbg").value;
-        var tanggalDftr = document.getElementById("updtanggalDftr").value;
-        var tempatUslnKp = document.getElementById("updtempatUslnKp").value;
-        var tahunAjrn = document.getElementById("updtahunAjrn").value;
-        var semester = document.getElementById("updsemester").value;
-
+        var nohp = document.getElementById("updnohp").value;
+        var transkrip = document.getElementById("updtranskrip").value;
+        var idDosenWali = document.getElementById("updidDosenWali").value;
 
         $.ajax({
             url: "<?php echo base_url('Mahasiswa/updateData'); ?>",
             type: "post",
             data: {
+                idDosenWali: idDosenWali,
+                idMahasiswa: idMahasiswa,
                 nrp: nrp,
-                id: id,
                 nama: nama,
-                noHp: noHp,
-                dwali: dwali,
-                dpmbg: dpmbg,
-                tanggalDftr: tanggalDftr,
-                tempatUslnKp: tempatUslnKp,
-                tahunAjrn: tahunAjrn,
-                semester: semester,
+                nohp: nohp,
+                transkrip: transkrip,
 
             },
             cache: false,

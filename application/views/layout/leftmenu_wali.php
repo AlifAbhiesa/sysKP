@@ -26,10 +26,10 @@
         </li>
 
 
-        <li class="<?php if ($this->uri->segment(1)==='PengajuanView'){
+        <li class="<?php if ($this->uri->segment(1)==='Pengajuan/pengajuanView'){
 			echo 'active';
 		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>PengajuanView" >
+			<a class="nav-link" href="<?php echo base_url()?>Pengajuan/pengajuanView" >
 				<i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Pengajuan</span>
 			</a>
 		</li>

@@ -68,7 +68,7 @@ class Pengajuan extends CI_Controller
 				$row[] = '<button class="btn btn-warning btn-xs">Waiting</button>';
 			}
 
-			$row[] = '<button onclick="getOne(\'' . $field->idPengajuan . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>';
+			$row[] = '<button onclick="getOne(\'' . $field->idPengajuan . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-upload"></i></button>';
 			$data[] = $row;
 		}
 

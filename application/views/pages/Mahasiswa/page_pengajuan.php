@@ -24,7 +24,7 @@
                                 <th rowspan="2">No</th>
                                 <th rowspan="2" style="text-align: center">Perusahaan</th>
                                 <th colspan="3" style="text-align: center">Aproval</th>
-								<th rowspan="2" style="text-align: center">Action</th>
+								<th rowspan="2" style="text-align: center">Upload</th>
                             </tr>
 						<tr>
 							<th style="text-align: center">Wali</th>
@@ -35,7 +35,7 @@
                     </table>
                     <br>
                     <button type="button" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#AddModal">
-                        Add New Dosen Bimbingan
+                        Ajukan Kerja Praktek
                     </button>
                 </div>
             </div>
@@ -50,7 +50,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <label class="border-bottom border-gray pb-2">Add Bimbingan</label>
+                <label class="border-bottom border-gray pb-2">Ajuak Kerja Praktek</label>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
@@ -60,7 +60,7 @@
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Id_Bimbingan</label>
+                        <label>Perusahaan</label>
                         <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="id_bimbingan" placeholder="Id_Bimbingan ...">
                     </div>
                 </div>
@@ -91,32 +91,26 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <label class="border-bottom border-gray pb-2">Update Dosen Bimbingan</label>
+                <label class="border-bottom border-gray pb-2">Approval</label>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
 
-
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Id_Bimbingan</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updid_bimbingan" placeholder="Id_Bimbingan ...">
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Materi</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updmateri" placeholder="Materi ...">
+                        <label>Approve Perusahaan</label>
+                        <select id="approvalPerusahaan" style="border-top: none; border-left: none; border-right: none" class="form-control">
+							<option value="Y">Approve</option>
+							<option value="N">Reject</option>
+						</select>
                     </div>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <input type="text" id="idDosen" hidden>
+                <input type="text" id="idPengajuan" hidden>
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
                 </button>
                 <button onclick="updateData()" type="button" class="btn btn-outline">Update
@@ -178,48 +172,15 @@
         });
     }
 
-    function deleteBbg(id) {
-
-
-
-        $.ajax({
-            url: "<?php echo base_url('Bimbingan/deleteData'); ?>",
-            type: "post",
-            data: {
-                id: id,
-            },
-            cache: false,
-            success: function(response) {
-                // alert(response);
-                location.reload();
-            }
-        });
-
-    }
-
     function showModal() {
         $('#UpdateModal').modal('show');
     }
 
     function getOne(id) {
-        $.ajax({
-            url: "<?php echo base_url('Bimbingan/getOne'); ?>",
-            type: "post",
-            data: {
-                id: id,
-            },
-            cache: false,
-            success: function(response) {
-                response = JSON.parse(response);
 
-                document.getElementById("updmateri").value = response[0]['materi'];
-                document.getElementById("updid_bimbingan").value = response[0]['id_bimbingan'];
-                document.getElementById("idDosen").value = response[0]['id'];
+       document.getElementById("idPengajuan").value = id;
 
-                showModal();
-            }
-        });
-
+       showModal();
     }
 
     function updateData() {

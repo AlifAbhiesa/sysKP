@@ -22,7 +22,6 @@ class Login_model extends CI_Model
 		$this->db->from('login');
 		$this->db->where(array('username' => $username, 'password' => $password, 'active' => 'Y'));
 		$login = $this->db->get()->result_array();
-		//$login = $this->db->query("select * from m_access where uName = '$username' and uPass = '$password'")->result_array();
 		return $login;
 	}
 }

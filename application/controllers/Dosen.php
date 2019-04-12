@@ -38,15 +38,11 @@ class Dosen extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->nrp;
+			$row[] = $field->nip;
 			$row[] = $field->nama;
-			$row[] = $field->noHp;
-			$row[] = $field->tanggalDftr;
-			$row[] = $field->tempatUslnKp;
-			$row[] = $field->tahunAjrn;
-			$row[] = $field->semester;
-			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteDosen(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+			$row[] = $field->email;
+			$row[] = '<button onclick="getOne(\'' . $field->idDosen . '\')" idDosen="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
+				'<button onclick="deleteDosen(\'' . $field->idDosen . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 
@@ -63,96 +59,77 @@ class Dosen extends CI_Controller
 	//add insert code here
 	public function addData()
 	{
-		$nrp = $_POST['nrp'];
+		$nip = $_POST['nip'];
 		$nama = $_POST['nama'];
-		$noHp = $_POST['noHp'];
-		$tanggalDftr = $_POST['tanggalDftr'];
-		$tempatUslnKp = $_POST['tempatUslnKp'];
-		$tahunAjrn = $_POST['tahunAjrn'];
-		$semester = $_POST['semester'];
+		$email = $_POST['email'];
 
 		$data = array(
-			'nrp' => $nrp,
+			'nip' => $nip,
 			'nama' => $nama,
-			'noHp' => $noHp,
-			'tanggalDftr' => $tanggalDftr,
-			'tempatUslnKp' => $tempatUslnKp,
-			'tahunAjrn' => $tahunAjrn,
-			'semester' => $semester,
-
+			'email' => $email,
 
 
 		);
 
 		$result = $this->Dosen_model->addData($data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 	public function deleteData()
 	{
-		$id = $_POST['id'];
-		
+		$idDosen = $_POST['idDosen'];
+
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Dosen_model->updateData($id,$data);
+		$result = $this->Dosen_model->updateData($idDosen, $data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 	public function getOne()
 	{
-		$id = $_POST['id'];
-		
+		$idDosen = $_POST['idDosen'];
+
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Dosen_model->getOne($id);
+		$result = $this->Dosen_model->getOne($idDosen);
 
 		echo json_encode($result);
 	}
-		public function updateData()
+	public function updateData()
 	{
-		$nrp = $_POST['nrp'];
-		$id = $_POST['id'];
+		$idDosen = $_POST['idDosen'];
+		$nip = $_POST['nip'];
 		$nama = $_POST['nama'];
-		$noHp = $_POST['noHp'];
-		$tanggalDftr = $_POST['tanggalDftr'];
-		$tempatUslnKp = $_POST['tempatUslnKp'];
-		$tahunAjrn = $_POST['tahunAjrn'];
-		$semester = $_POST['semester'];
-
+		$email = $_POST['email'];
 
 		$data = array(
-			'nrp' => $nrp,
+			'nip' => $nip,
 			'nama' => $nama,
-			'noHp' => $noHp,
-			'tanggalDftr' => $tanggalDftr,
-			'tempatUslnKp' => $tempatUslnKp,
-			'tahunAjrn' => $tahunAjrn,
-			'semester' => $semester,
+			'email' => $email,
+
 		);
 
-		$result = $this->Dosen_model->updateData($id,$data);
+		$result = $this->Dosen_model->updateData($idDosen, $data);
 
-		if($result > 0){
+		if ($result > 0) {
 			echo "Ok";
-		}else{
+		} else {
 			echo "Failed";
 		}
 	}
 }
-
-?>
 

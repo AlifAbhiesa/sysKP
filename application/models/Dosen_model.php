@@ -10,14 +10,13 @@ class Dosen_model extends CI_Model
 {
 
 	var $table = 'dosen'; //nama tabel dari database
-	var $column_search = array('nama'); //field yang diizin untuk pencarian
-	var $order = array('id' => 'DESC'); // default order
+	var $column_search = array('nip'); //field yang diizin untuk pencarian
+	var $order = array('idDosen' => 'DESC'); // default order
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->database();
-
 	}
 
 	private function _get_datatables_query()
@@ -28,32 +27,27 @@ class Dosen_model extends CI_Model
 		$i = 0;
 
 		foreach ($this->column_search as $item) // looping awal
-		{
-			if($_POST['search']['value']) // jika datatable mengirimkan pencarian dengan metode POST
 			{
+				if ($_POST['search']['value']) // jika datatable mengirimkan pencarian dengan metode POST
+					{
 
-				if($i===0) // looping awal
-				{
-					$this->db->group_start();
-					$this->db->like($item, $_POST['search']['value']);
-				}
-				else
-				{
-					$this->db->or_like($item, $_POST['search']['value']);
-				}
+						if ($i === 0) // looping awal
+							{
+								$this->db->group_start();
+								$this->db->like($item, $_POST['search']['value']);
+							} else {
+							$this->db->or_like($item, $_POST['search']['value']);
+						}
 
-				if(count($this->column_search) - 1 == $i)
-					$this->db->group_end();
+						if (count($this->column_search) - 1 == $i)
+							$this->db->group_end();
+					}
+				$i++;
 			}
-			$i++;
-		}
 
-		if(isset($_POST['order']))
-		{
+		if (isset($_POST['order'])) {
 			$this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
-		}
-		else if(isset($this->order))
-		{
+		} else if (isset($this->order)) {
 			$order = $this->order;
 			$this->db->order_by(key($order), $order[key($order)]);
 		}
@@ -62,9 +56,9 @@ class Dosen_model extends CI_Model
 	function get_datatables()
 	{
 		$this->_get_datatables_query();
-		if($_POST['length'] != -1)
+		if ($_POST['length'] != -1)
 			$this->db->limit($_POST['length'], $_POST['start']);
-			$this->db->where(array('active' => 'Y'));
+		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -72,7 +66,7 @@ class Dosen_model extends CI_Model
 	function count_filtered()
 	{
 		$this->_get_datatables_query();
-			$this->db->where(array('active' => 'Y'));
+		$this->db->where(array('active' => 'Y'));
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -84,24 +78,23 @@ class Dosen_model extends CI_Model
 	}
 
 	//insert code here !
-	public function addData($data){
+	public function addData($data)
+	{
 		$this->db->insert('dosen', $data);
 		return $this->db->affected_rows();
-
 	}
-	public function updateData($id, $data){
-		$this->db->where('id', $id);
+	public function updateData($idDosen, $data)
+	{
+		$this->db->where('idDosen', $idDosen);
 		$this->db->update('dosen', $data);
 		return $this->db->affected_rows();
-
 	}
-	public function getOne($id){
+	public function getOne($idDosen)
+	{
 		$this->db->select('*');
 		$this->db->from('dosen');
-		$this->db->where(array('id' => $id));
-		
-		return $this->db->get()->result_array();
-		
-	}
+		$this->db->where(array('idDosen' => $idDosen));
 
+		return $this->db->get()->result_array();
+	}
 }

@@ -21,11 +21,17 @@ class Mahasiswa extends CI_Controller
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
 			$data = array('isi' => 'pages/page_mahasiswa', 'title' => 'SysKP');
+			$data['list_dosen'] = $this->Mahasiswa_model->getAllDosen();
 			$this->load->view('layout/wrapper', $data);
+			
 		} else {
 			$this->load->view('pages/page_login');
 			//Ajie's task
 		}
+	}
+
+	public function cekDosen(){
+		echo json_encode($this->Mahasiswa_model->getAllDosen());
 	}
 
 

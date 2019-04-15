@@ -58,7 +58,12 @@
                 <div class="form-group">
                     <div class="md-input-wrapper">
                         <label>ID Dosen Wali</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="idDosenWali" placeholder="Id dosen wali ...">
+                        <select style="border-top: none; border-left: none; border-right: none" class="form-control" id="idDosenWali">
+                            <option> ---- Pick ----</option>
+                        <?php foreach ($list_dosen as $row) : ?>
+                           <option value="<?php echo $row['idDosen'] ?>"> <?php echo $row['nama'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 
@@ -118,7 +123,12 @@
             <div class="form-group">
                     <div class="md-input-wrapper">
                         <label>ID Dosen Wali</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updidDosenWali" placeholder="Id dosen wali ...">
+                        <select style="border-top: none; border-left: none; border-right: none" class="form-control" id="updidDosenWali">
+                            <option> ---- Pick ----</option>
+                        <?php foreach ($list_dosen as $row) : ?>
+                           <option value="<?php echo $row['idDosen'] ?>"> <?php echo $row['nama'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 

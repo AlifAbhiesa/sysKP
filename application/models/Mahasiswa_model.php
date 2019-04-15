@@ -77,6 +77,12 @@ class Mahasiswa_model extends CI_Model
 		return $this->db->count_all_results();
 	}
 
+	public function getAllDosen(){
+		$this->db->select('*');
+		$this->db->from('dosen');
+		return $this->db->get()->result_array();
+	}
+
 	//insert code here !
 	public function addData($data)
 	{

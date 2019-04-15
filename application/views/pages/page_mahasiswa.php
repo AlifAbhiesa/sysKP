@@ -269,20 +269,19 @@
     }
 
     function updateData() {
-
+        var idDosenWali = document.getElementById("updidDosenWali").value;
         var nrp = document.getElementById("updnrp").value;
         var idMahasiswa = document.getElementById("idMahasiswa").value;
         var nama = document.getElementById("updnama").value;
         var nohp = document.getElementById("updnohp").value;
         var transkrip = document.getElementById("updtranskrip").value;
-        var idDosenWali = document.getElementById("updidDosenWali").value;
 
         $.ajax({
             url: "<?php echo base_url('Mahasiswa/updateData'); ?>",
             type: "post",
             data: {
-                idDosenWali: idDosenWali,
                 idMahasiswa: idMahasiswa,
+                idDosenWali: idDosenWali,
                 nrp: nrp,
                 nama: nama,
                 nohp: nohp,

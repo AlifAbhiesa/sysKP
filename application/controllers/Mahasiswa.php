@@ -44,8 +44,8 @@ class Mahasiswa extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->idDosenWali;
-			$row[] = $field->nama;
+			$row[] = $field->namaDosen;
+			$row[] = $field->namaMahasiswa;
 			$row[] = $field->nrp;
 			$row[] = $field->nohp;
 			$row[] = $field->transkrip;

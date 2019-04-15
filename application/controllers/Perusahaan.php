@@ -68,6 +68,7 @@ class Perusahaan extends CI_Controller
 			'namaPerusahaan' => $namaPerusahaan,
 			'alamatPerusahaan' => $alamatPerusahaan,
 			'emailPerusahaan' => $emailPerusahaan,
+			'active' => 'Y',
 			'fax' => $fax,
 
 

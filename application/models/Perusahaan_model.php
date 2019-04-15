@@ -10,8 +10,8 @@ class Perusahaan_model extends CI_Model
 {
 
 	var $table = 'perusahaan'; //nama tabel dari database
-	var $column_search = array('nama'); //field yang diizin untuk pencarian
-	var $order = array('id' => 'DESC'); // default order
+	var $column_search = array('namaPerusahaan'); //field yang diizin untuk pencarian
+	var $order = array('idPerusahaan' => 'DESC'); // default order
 
 	public function __construct()
 	{
@@ -89,16 +89,16 @@ class Perusahaan_model extends CI_Model
 		return $this->db->affected_rows();
 
 	}
-	public function updateData($id, $data){
-		$this->db->where('id', $id);
+	public function updateData($idPerusahaan, $data){
+		$this->db->where('idPerusahaan', $idPerusahaan);
 		$this->db->update('perusahaan', $data);
 		return $this->db->affected_rows();
 	}
 	
-	public function getOne($id){
+	public function getOne($idPerusahaan){
 		$this->db->select('*');
 		$this->db->from('perusahaan');
-		$this->db->where(array('id' => $id));
+		$this->db->where(array('idPerusahaan' => $idPerusahaan));
 		
 		return $this->db->get()->result_array();
 		

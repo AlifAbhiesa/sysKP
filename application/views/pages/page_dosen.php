@@ -136,7 +136,6 @@
 
 <script>
     showData()
-
     function showData() {
         //datatables
         table = $('#myData').DataTable({

@@ -117,9 +117,9 @@ class Mahasiswa extends CI_Controller
 	}
 	public function updateData()
 	{
-		$nrp = $_POST['nrp'];
 		$idMahasiswa = $_POST['idMahasiswa'];
 		$idDosenWali = $_POST['idDosenWali'];
+		$nrp = $_POST['nrp'];
 		$nama = $_POST['nama'];
 		$nohp = $_POST['nohp'];
 		$transkrip = $_POST['transkrip'];

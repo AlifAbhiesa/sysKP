@@ -153,15 +153,14 @@
 	function showData() {
 		//datatables
 		table = $('#myData').DataTable({
-			"columnDefs": [{
-					"targets": 0,
-					"width": "50px"
-				},
+			"columnDefs": [ {
+				"targets": 0,
+				"width": "50px"
+			},
 				{
-					"targets": [1, 2, 3],
+					"targets": [1,2,3],
 					"width": "200px"
-				}
-			],
+				}],
 			"ordering": false,
 			"destroy": true,
 			"serverSide": true,
@@ -169,7 +168,7 @@
 
 			"ajax": {
 				"url": "<?php echo site_url('Perusahaan/getAll')?>",
-				"async": false,
+				"async":false,
 				"type": "POST"
 			},
 
@@ -189,10 +188,10 @@
 			url: "<?php echo base_url('Perusahaan/addData'); ?>",
 			type: "post",
 			data: {
-				namaPerusahaan: namaPerusahaan,
-				alamatPerusahaan: alamatPerusahaan,
-				emailPerusahaan: emailPerusahaan,
-				fax: fax,
+				namaPerusahaan:namaPerusahaan,
+				alamatPerusahaan:alamatPerusahaan,
+				emailPerusahaan:emailPerusahaan,
+				fax:fax,
 			},
 			cache: false,
 			success: function (response) {
@@ -203,7 +202,7 @@
 
 	}
 	
-	function deletePerusahaan(idPerusahaan) {
+	function deletePerusahaan(id) {
 
 		$.ajax({
 			url: "<?php echo base_url('Perusahaan/deleteData'); ?>",
@@ -223,7 +222,7 @@
 	function showModal(){
 		$('#UpdateModal').modal('show');
 	}
-	function getOne(idPerusahaan) {
+	function getOne(id) {
 		$.ajax({
 			url: "<?php echo base_url('Perusahaan/getOne'); ?>",
 			type: "post",
@@ -246,7 +245,7 @@
 	}
 	function updateData() {
 		
-		var idPerusahaan = document.getElementById("idPerusahaan").value;
+		var idPerusahaan = document.getElementById("updidPerusahaan").value;
 		var namaPerusahaan = document.getElementById("updnamaPerusahaan").value;
 		var alamatPerusahaan = document.getElementById("updalamatPerusahaan").value;
 	    var emailPerusahaan = document.getElementById("updemailPerusahaan").value;
@@ -256,11 +255,11 @@
 			url: "<?php echo base_url('Perusahaan/updateData'); ?>",
 			type: "post",
 			data: {
-				idPerusahaan: idPerusahaan,
-				namaPerusahaan: namaPerusahaan,
-				alamatPerusahaan: alamatPerusahaan,
-				emailPerusahaan: emailPerusahaan,
-				fax: fax,
+				idPerusahaan:idPerusahaan,
+				namaPerusahaan:namaPerusahaan,
+				alamatPerusahaan:alamatPerusahaan,
+				emailPerusahaan:emailPerusahaan,
+				fax:fax,
 				
 			},
 			cache: false,

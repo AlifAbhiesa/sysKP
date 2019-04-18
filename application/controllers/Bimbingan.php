@@ -20,7 +20,7 @@ class Bimbingan extends CI_Controller
 	{
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
-			$data = array('isi' => 'pages/page_bimbingan', 'title' => 'SysKP');
+			$data = array('isi' => 'pages/page_bimbingan', 'title' => 'Bimbingan');
 			$this->load->view('layout/wrapper', $data);
 		} else {
 			$this->load->view('pages/page_login');
@@ -38,10 +38,10 @@ class Bimbingan extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->id_bimbingan;
-			$row[] = $field->materi;
-			$row[] = '<button onclick="getOne(\'' . $field->id . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
-				'<button onclick="deleteBbg(\'' . $field->id . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
+			$row[] = $field->idKerjaPraktek1;
+			$row[] = $field->materiBimbingan;
+			$row[] = '<button onclick="getOne(\'' . $field->idBimbingan . '\')" idBimbingan="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-edit"></i></button>' .
+				'<button onclick="deleteBimbingan(\'' . $field->idBimbingan . '\')" data-toggle="tooltip" title="hapus data" class="btn btn-danger btn-xs" style="margin-left: 3px;"><i class="fa fa-trash"></i></button>';
 			$data[] = $row;
 		}
 
@@ -54,77 +54,77 @@ class Bimbingan extends CI_Controller
 		//JSON output
 		echo json_encode($output);
 	}
-
 	//add insert code here
 	public function addData()
 	{
-		$nrp = $_POST['id_bimbingan'];
-		$nama = $_POST['materi'];
+		$idKerjaPraktek1 = $_POST['idKerjaPraktek1'];
+		$materiBimbingan = $_POST['materiBimbingan'];
 
 		$data = array(
-			'id_bimbingan' => $id_bimbingan,
-			'materi' => $materi,
+			'idKerjaPraktek1' => $idKerjaPraktek1,
+			'materiBimbingan' => $materiBimbingan,
 
 
 		);
 
 		$result = $this->Bimbingan_model->addData($data);
 
-		if ($result > 0) {
+		if($result > 0){
 			echo "Ok";
-		} else {
+		}else{
 			echo "Failed";
 		}
 	}
+	
 	public function deleteData()
 	{
-		$id = $_POST['id'];
-
+		$idBimbingan = $_POST['idBimbingan'];
+		
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Bimbingan_model->updateData($id, $data);
+		$result = $this->Bimbingan_model->updateData($idBimbingan,$data);
 
-		if ($result > 0) {
+		if($result > 0){
 			echo "Ok";
-		} else {
+		}else{
 			echo "Failed";
 		}
 	}
-	public function getOne()
+		public function getOne()
 	{
-		$id = $_POST['id'];
-
+		$idBimbingan = $_POST['idBimbingan'];
+		
 
 		$data = array(
 			'active' => 'N',
 		);
 
-		$result = $this->Bimbingan_model->getOne($id);
+		$result = $this->Bimbingan_model->getOne($idBimbingan);
 
 		echo json_encode($result);
 	}
-	public function updateData()
+		public function updateData()
 	{
-		$id_bimbingan = $_POST['id_bimbingan'];
-		$id = $_POST['id'];
-		$materi = $_POST['materi'];
+		$idBimbingan = $_POST['idBimbingan'];
+		$idKerjaPraktek1 = $_POST['idKerjaPraktek1'];
+		$materiBimbingan = $_POST['materiBimbingan'];
+		
 
 		$data = array(
-			'id_bimbingan' => $id_bimbingan,
-			'materi' => $materi,
+			'idkerjaPraktek1' => $idkerjaPraktek1,
+			'materiBimbingan' => $materiBimbingan,
 		);
 
-		$result = $this->Bimbingan_model->updateData($id, $data);
+		$result = $this->Bimbingan_model->updateData($idBimbingan,$data);
 
-		if ($result > 0) {
+		if($result > 0){
 			echo "Ok";
-		} else {
+		}else{
 			echo "Failed";
 		}
 	}
 }
-
- 
+?>

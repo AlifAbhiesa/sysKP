@@ -10,8 +10,8 @@ class Bimbingan_model extends CI_Model
 {
 
 	var $table = 'bimbingan'; //nama tabel dari database
-	var $column_search = array('nrp'); //field yang diizin untuk pencarian
-	var $order = array('id' => 'DESC'); // default order
+	var $column_search = array('idKerjaPraktek1'); //field yang diizin untuk pencarian
+	var $order = array('idBimbingan' => 'DESC'); // default order
 
 	public function __construct()
 	{
@@ -82,26 +82,27 @@ class Bimbingan_model extends CI_Model
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
-	
+
 	//insert code here !
 	public function addData($data){
 		$this->db->insert('bimbingan', $data);
 		return $this->db->affected_rows();
-		
-	}
-		public function updateData($id, $data){
-		$this->db->where('id', $id);
-		$this->db->update('bimbingan', $data);
-		return $this->db->affected_rows();
 
 	}
-	public function getOne($id){
+	public function updateData($idBimbingan, $data){
+		$this->db->where('idBimbingan', $idBimbingan);
+		$this->db->update('bimbingan', $data);
+		return $this->db->affected_rows();
+	}
+	
+	public function getOne($idBimbingan){
 		$this->db->select('*');
 		$this->db->from('bimbingan');
-		$this->db->where(array('id' => $id));
+		$this->db->where(array('idBimbingan' => $idBimbingan));
 		
 		return $this->db->get()->result_array();
 		
 	}
+
 
 }

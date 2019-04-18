@@ -26,10 +26,10 @@
         </li>
 
 
-		<li class="<?php if ($this->uri->segment(1)==='MahasiswaBimingan'){
+		<li class="<?php if ($this->uri->segment(1)==='Bimbingan'){
 			echo 'active';
 		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>MahasiswaBimingan" >
+			<a class="nav-link" href="<?php echo base_url()?>Bimbingan" >
 				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Mahasiswa Bimbingan</span>
 			</a>
 		</li>
@@ -48,7 +48,7 @@
 		}?> nav-item">
 			<a class="nav-link" href="<?php echo base_url()?>JadwalSidang" >
 				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Jadwal Sidang</span>
-			</a>
+			</a> 
 		</li>
 
 

@@ -4,7 +4,7 @@
             <div class="nav-link">
                 <div class="user-wrapper">
                     <div class="profile-image">
-                        <img src="<?php echo base_url()?>assets/images/faces/face5.jpg" alt="profile image">
+                        <img src="<?php echo base_url() ?>assets/images/faces/face5.jpg" alt="profile image">
                     </div>
                     <div class="text-wrapper">
                         <p><?php echo $this->session->userdata('username'); ?></p>
@@ -14,33 +14,41 @@
                         </div>
                     </div>
                 </div>
-               
+
         </li>
 
-        <li class="<?php if ($this->uri->segment(1)==='Dashboard'){
-            echo 'active';
-        }?> nav-item">
-            <a class="nav-link" href="<?php echo base_url()?>Dashboard" >
+        <li class="<?php if ($this->uri->segment(1) === 'Dashboard') {
+                        echo 'active';
+                    } ?> nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>Dashboard">
                 <i class="menu-icon mdi mdi-television" style="color: #3c8dbc"></i> <span>&ensp;Dashboard</span>
             </a>
         </li>
 
 
-		<li class="<?php if ($this->uri->segment(1)==='Pengajuan'){
-			echo 'active';
-		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>Pengajuan" >
-				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Pengajuan</span>
-			</a>
-		</li>
+        <li class="<?php if ($this->uri->segment(1) === 'Pengajuan') {
+                        echo 'active';
+                    } ?> nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>Pengajuan">
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Pengajuan</span>
+            </a>
+        </li>
 
-		<li class="<?php if ($this->uri->segment(1)==='JadwalSidang'){
-			echo 'active';
-		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>JadwalSidang" >
-				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Jadwal Sidang</span>
-			</a>
-		</li>
+        <li class="<?php if ($this->uri->segment(1) === 'Bimbingan/bimbinganView') {
+                        echo 'active';
+                    } ?> nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>Bimbingan/bimbinganView">
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Bimbingan</span>
+            </a>
+        </li>
+
+        <li class="<?php if ($this->uri->segment(1) === 'JadwalSidang/jadwalsidangView') {
+                        echo 'active';
+                    } ?> nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>JadwalSidang/jadwalsidangView">
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Jadwal Sidang</span>
+            </a>
+        </li>
 
 
 
@@ -48,4 +56,3 @@
 </nav>
 <!-- partial -->
 <div class="main-panel">
-

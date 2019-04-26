@@ -19,7 +19,7 @@
 				<div class="box-body">
 					<hr>
 					<table class="table table-bordered table-striped dt-responsive" id="myData" width="100%" >
-						<thead>
+						<thead class="thead-dark">
 						<tr>
 							<th>No</th>
 							<th>Judul Kp</th>
@@ -28,7 +28,6 @@
 							<th>Tanggal Sidang</th>
 							<th>Penguji</th>
 							<th>Nilai</th>
-							<th>Action</th>
 						</tr>
 						</thead>
 					</table>
@@ -59,7 +58,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Judul Kp</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKp" placeholder="Judul KP ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKP" placeholder="Judul KP ...">
 					</div>
 				</div>
 
@@ -126,7 +125,7 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Judul Kp</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjudulKp" placeholder="Judul KP ...">
+						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjudulKP" placeholder="Judul KP ...">
 					</div>
 				</div>
 
@@ -210,7 +209,7 @@
 
 	function AddData() {
 
-		var judulKp = document.getElementById("judulKp").value;
+		var judulKP = document.getElementById("judulKP").value;
 		var nrp = document.getElementById("nrp").value;
 		var nama = document.getElementById("nama").value;
 		var tglSidang = document.getElementById("tglSidang").value;
@@ -221,7 +220,7 @@
 			url: "<?php echo base_url('Sidangkp/addData'); ?>",
 			type: "post",
 			data: {
-				judulKp:judulKp,
+				judulKP:judulKP,
 				nrp:nrp,
 				nama:nama,
 				tglSidang:tglSidang,
@@ -274,7 +273,7 @@
 				document.getElementById("updtglSidang").value=response[0]['tglSidang'];
 				document.getElementById("updnama").value=response[0]['nama'];
 				document.getElementById("updnrp").value=response[0]['nrp'];
-				document.getElementById("updjudulKp").value=response[0]['judulKp'];
+				document.getElementById("updjudulKP").value=response[0]['judulKP'];
 				document.getElementById("idSidangkp").value=response[0]['id'];
 				
 				showModal();
@@ -284,7 +283,7 @@
 	}
 	function updateData() {
 
-		var judulKp = document.getElementById("updjudulKp").value;
+		var judulKP = document.getElementById("updjudulKP").value;
 		var id = document.getElementById("idSidangkp").value;
 	    var nrp = document.getElementById("updnrp").value;
 		var nama = document.getElementById("updnama").value;
@@ -296,7 +295,7 @@
 			url: "<?php echo base_url('Sidangkp/updateData'); ?>",
 			type: "post",
 			data: {
-				judulKp:judulKp,
+				judulKP:judulKP,
 				id:id,
 				nrp:nrp,
 				nama:nama,

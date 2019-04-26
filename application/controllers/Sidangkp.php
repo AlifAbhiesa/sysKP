@@ -38,7 +38,7 @@ class Sidangkp extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->judulKp;
+			$row[] = $field->judulKP;
 			$row[] = $field->nrp;
 			$row[] = $field->nama;
 			$row[] = $field->tglSidang;
@@ -61,7 +61,7 @@ class Sidangkp extends CI_Controller
 	//add insert code here
 	public function addData()
 	{
-		$judulKp = $_POST['judulKp'];
+		$judulKP = $_POST['judulKP'];
 		$nrp = $_POST['nrp'];
 		$nama = $_POST['nama'];
 		$tglSidang = $_POST['tglSidang'];
@@ -69,7 +69,7 @@ class Sidangkp extends CI_Controller
 		$nilai = $_POST['nilai'];
 		
 		$data = array(
-			'judulKp' => $judulKp,
+			'judulKP' => $judulKP,
 			'nrp' => $nrp,
 			'nama' => $nama,
 			'tglSidang' => $tglSidang,
@@ -118,7 +118,7 @@ class Sidangkp extends CI_Controller
 	}
 		public function updateData()
 	{
-		$judulKp = $_POST['judulKp'];
+		$judulKp = $_POST['judulKP'];
 		$id = $_POST['id'];
 		$nrp = $_POST['nrp'];
 		$nama = $_POST['nama'];
@@ -128,7 +128,7 @@ class Sidangkp extends CI_Controller
 		
 
 		$data = array(
-			'judulKp' => $judulKp,
+			'judulKP' => $judulKP,
 			'nrp' => $nrp,
 			'nama' => $nama,
 			'tglSidang' => $tglSidang,

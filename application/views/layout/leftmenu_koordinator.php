@@ -35,6 +35,14 @@
             </a>
         </li>
 
+        <li class="<?php if ($this->uri->segment(1) === 'KP') {
+                        echo 'active';
+                    } ?> nav-item">
+            <a class="nav-link" href="<?php echo base_url() ?>KP">
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Kerja Praktek</span>
+            </a>
+        </li>
+
         <li class="<?php if ($this->uri->segment(1)==='Bimbingan'){
             echo 'active';
         }?> nav-item">

@@ -34,14 +34,6 @@
 			</a>
 		</li>
 
-		<li class="<?php if ($this->uri->segment(1)==='MahasiswaUji'){
-			echo 'active';
-		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>MahasiswaUji" >
-				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Mahasiswa Uji</span>
-			</a>
-		</li>
-
 
 		<li class="<?php if ($this->uri->segment(1)==='Sidangkp/sidangkpView'){
 			echo 'active';

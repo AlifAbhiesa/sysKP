@@ -35,10 +35,10 @@
             </a>
         </li>
 
-        <li class="<?php if ($this->uri->segment(1) === 'Sidangkp') {
+        <li class="<?php if ($this->uri->segment(1) === 'Sidangkp/sidangkpView1') {
                         echo 'active';
                     } ?> nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>Sidangkp">
+            <a class="nav-link" href="<?php echo base_url() ?>Sidangkp/sidangkpView1">
                 <i class="menu-icon fa fa-file" style="color: #3c8dbc"></i> <span>&ensp;Sidangkp</span>
             </a>
         </li>

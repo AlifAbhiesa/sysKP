@@ -11,7 +11,7 @@ class Sidangkp_model extends CI_Model
 {
 
 	var $table = 'sidangkp'; //nama tabel dari database
-	var $column_search = array('judulKp'); //field yang diizin untuk pencarian
+	var $column_search = array('judulKP'); //field yang diizin untuk pencarian
 	var $order = array('id' => 'DESC'); // default order
 
 	public function __construct()

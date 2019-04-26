@@ -28,13 +28,10 @@
 							<th>Tanggal Sidang</th>
 							<th>Penguji</th>
 							<th>Nilai</th>
+							<th>Action</th>
 						</tr>
 						</thead>
 					</table>
-					<br>
-					<button type="button" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#AddModal">
-						Add New Sidangkp
-					</button>
 				</div>
 			</div>
 		</div>
@@ -197,7 +194,7 @@
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Sidangkp/getAll')?>",
+				"url": "<?php echo site_url('Sidangkp/getAllView')?>",
 				"async":false,
 				"type": "POST"
 			},
@@ -236,24 +233,6 @@
 
 	}
 	
-	function deleteSidangkp(id) {
-
-		
-
-		$.ajax({
-			url: "<?php echo base_url('Sidangkp/deleteData'); ?>",
-			type: "post",
-			data: {
-				id:id,
-			},
-			cache: false,
-			success: function (response) {
-				// alert(response);
-				location.reload();
-			}
-		});
-
-	}
 	function showModal(){
 		$('#UpdateModal').modal('show');
 	}

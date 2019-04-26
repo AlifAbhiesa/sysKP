@@ -28,6 +28,7 @@
 							<th>Tanggal Sidang</th>
 							<th>Penguji</th>
 							<th>Nilai</th>
+							<th>Action</th>
 						</tr>
 						</thead>
 					</table>
@@ -197,7 +198,7 @@
 			"order": [],
 
 			"ajax": {
-				"url": "<?php echo site_url('Sidangkp/getAll')?>",
+				"url": "<?php echo site_url('Sidangkp/getAllView1')?>",
 				"async":false,
 				"type": "POST"
 			},
@@ -235,7 +236,7 @@
 		});
 
 	}
-	
+
 	function deleteSidangkp(id) {
 
 		
@@ -254,6 +255,7 @@
 		});
 
 	}
+	
 	function showModal(){
 		$('#UpdateModal').modal('show');
 	}

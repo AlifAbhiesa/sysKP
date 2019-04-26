@@ -43,11 +43,11 @@
 		</li>
 
 
-		<li class="<?php if ($this->uri->segment(1)==='JadwalSidang'){
+		<li class="<?php if ($this->uri->segment(1)==='Sidangkp/sidangkpView'){
 			echo 'active';
 		}?> nav-item">
-			<a class="nav-link" href="<?php echo base_url()?>JadwalSidang" >
-				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Jadwal Sidang</span>
+			<a class="nav-link" href="<?php echo base_url()?>Sidangkp/sidangkpView" >
+				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Sidang KP</span>
 			</a> 
 		</li>
 

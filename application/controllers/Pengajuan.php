@@ -54,10 +54,10 @@ class Pengajuan extends CI_Controller
 			//Approval Perusahaan
 			if($field->approvePerusahaan == "N"){
 				$row[] = '<button class="btn btn-danger btn-xs">Rejected</button>';
-			}elseif($field->approveWali == "Y"){
+			}elseif($field->approvePerusahaan == "Y"){
 				$row[] = '<button class="btn btn-success btn-xs">Approved</button>';
 			}else{
-				$row[] = '<button class="btn btn-warning btn-xs">Waiting</button>';
+				$row[] = '<button onclick="getOne(\'' . $field->idPengajuan . '\')" class="btn btn-warning btn-xs">Waiting</button>';
 			}
 
 			//Approval Koordinator
@@ -69,7 +69,7 @@ class Pengajuan extends CI_Controller
 				$row[] = '<button class="btn btn-warning btn-xs">Waiting</button>';
 			}
 
-			$row[] = '<button onclick="getOne(\'' . $field->idPengajuan . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-upload"></i></button>';
+			//$row[] = '<button onclick="getOne(\'' . $field->idPengajuan . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-upload"></i></button>';
 			$data[] = $row;
 		}
 
@@ -156,5 +156,24 @@ class Pengajuan extends CI_Controller
 		);
 		//JSON output
 		echo json_encode($output);
+	}
+
+	public function saveApprovePerusahaan(){
+		$idPengajuan = $_POST['idPengajuan'];
+		$status = $_POST['status'];
+
+		$data = array(
+		'approvePerusahaan' => $status,
+		'approvePerusahaanAt' => date("Y-m-d"),
+
+		);
+
+		$res = $this->Pengajuan_model->updateData($idPengajuan, $data);
+
+		if($res > 0){
+			echo "Ok";
+		}else{
+			echo "Failed";
+		}
 	}
 }

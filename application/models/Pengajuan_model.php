@@ -96,7 +96,7 @@ class Pengajuan_model extends CI_Model
 		
 	}
 		public function updateData($id, $data){
-		$this->db->where('id', $id);
+		$this->db->where('idPengajuan', $id);
 		$this->db->update('pengajuan', $data);
 		return $this->db->affected_rows();
 

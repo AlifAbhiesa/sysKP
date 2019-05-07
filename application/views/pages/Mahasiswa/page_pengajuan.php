@@ -24,7 +24,6 @@
                                 <th rowspan="2">No</th>
                                 <th rowspan="2" style="text-align: center">Perusahaan</th>
                                 <th colspan="3" style="text-align: center">Aproval</th>
-								<th rowspan="2" style="text-align: center">Upload</th>
                             </tr>
 						<tr>
 							<th style="text-align: center">Wali</th>
@@ -191,19 +190,15 @@
 
     function updateData() {
 
-        var id_bimbingan = document.getElementById("updid_bimbingan").value;
-        var id = document.getElementById("idDosen").value;
-        var materi = document.getElementById("updmateri").value;
-
+        var idPengajuan = document.getElementById("idPengajuan").value;
+        var status = document.getElementById("approvalPerusahaan").value;
 
         $.ajax({
-            url: "<?php echo base_url('Bimbingan/updateData'); ?>",
+            url: "<?php echo base_url('Pengajuan/saveApprovePerusahaan'); ?>",
             type: "post",
             data: {
-                id_bimbingan: id_bimbingan,
-                id: id,
-                materi: materi,
-
+				idPengajuan:idPengajuan,
+				status:status,
             },
             cache: false,
             success: function(response) {

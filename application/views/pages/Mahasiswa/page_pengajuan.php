@@ -31,6 +31,7 @@
 							<th style="text-align: center">Perusahaan</th>
 							<th style="text-align: center">Koordinator</th>
 						</tr>
+
                         </thead>
                     </table>
                     <br>

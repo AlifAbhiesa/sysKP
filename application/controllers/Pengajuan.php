@@ -106,22 +106,15 @@ class Pengajuan extends CI_Controller
 			$no++;
 			$row = array();
 			$row[] = $no;
-			$row[] = $field->nrp;
-			$row[] = $field->nama;
 			$row[] = $field->namaPerusahaan;
-			$row[] = date($field->tglProposal,strtotime("d-m-Y"));
-			$row[] = date($field->startDate,strtotime("d-m-Y"));
-			$row[] = date($field->endDate,strtotime("d-m-Y"));
-
 			// Approval Wali
 			if($field->approveWali == "N"){
 				$row[] = '<button class="btn btn-danger btn-xs">Rejected</button>';
 			}elseif($field->approveWali == "Y"){
-				$row[] = '<button class="btn btn-success btn-xs">Approved</button>';
+				$row[] = '<button class="btn getAllbtn-success btn-xs">Approved</button>';
 			}else{
 				$row[] = '<button class="btn btn-warning btn-xs">Waiting</button>';
 			}
-
 			//Approval Perusahaan
 			if($field->approvePerusahaan == "N"){
 				$row[] = '<button class="btn btn-danger btn-xs">Rejected</button>';
@@ -131,9 +124,6 @@ class Pengajuan extends CI_Controller
 				$row[] = '<button class="btn btn-warning btn-xs">Waiting</button>';
 			}
 
-			//Approve
-			//$row[] = $field->buktiApproval;
-
 			//Approval Koordinator
 			if($field->approveKoordinator == "N"){
 				$row[] = '<button class="btn btn-danger btn-xs">Rejected</button>';
@@ -142,6 +132,16 @@ class Pengajuan extends CI_Controller
 			}else{
 				$row[] = '<button class="btn btn-warning btn-xs">Waiting</button>';
 			}
+			$row[] = $field->buktiApproval;
+
+
+
+
+
+			//Approve
+			//$row[] = $field->buktiApproval;
+
+
 
 			$row[] = '<button onclick="approve(\'' . $field->idPengajuan . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-check"></i></button>'.
 				'<button onclick="getOne(\'' . $field->idPengajuan . '\')" id="btnUpdate" data-toggle="tooltip" title="ubah data" class="btn btn-danger btn-xs"><i class="fa fa-close"></i></button>';

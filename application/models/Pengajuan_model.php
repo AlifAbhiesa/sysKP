@@ -64,10 +64,9 @@ class Pengajuan_model extends CI_Model
 		$this->_get_datatables_query();
 		if($_POST['length'] != -1)
 			$this->db->limit($_POST['length'], $_POST['start']);
-
+		$this->db->select('pengajuan.idPengajuan,perusahaan.namaPerusahaan, pengajuan.approveWali,pengajuan.approvePerusahaan, pengajuan.approveKoordinator, pengajuan.buktiApproval');
 		$this->db->join('perusahaan','perusahaan.idPerusahaan = pengajuan.idPerusahaan','LEFT');
-		$this->db->join('mahasiswa','mahasiswa.idMahasiswa = pengajuan.idMahasiswa','LEFT');
-		$where = "pengajuan.active = 'Y' AND mahasiswa.active = 'Y' AND perusahaan.active = 'Y' AND pengajuan.idMahasiswa = $idReference";
+		$where = "pengajuan.active = 'Y' AND perusahaan.active = 'Y' AND pengajuan.idMahasiswa = $idReference";
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query->result();
@@ -76,10 +75,9 @@ class Pengajuan_model extends CI_Model
 	function count_filtered($idReference)
 	{
 		$this->_get_datatables_query();
-
+		$this->db->select('pengajuan.idPengajuan,perusahaan.namaPerusahaan, pengajuan.approveWali,pengajuan.approvePerusahaan, pengajuan.approveKoordinator, pengajuan.buktiApproval');
 		$this->db->join('perusahaan','perusahaan.idPerusahaan = pengajuan.idPerusahaan','LEFT');
-		$this->db->join('mahasiswa','mahasiswa.idMahasiswa = pengajuan.idMahasiswa','LEFT');
-		$where = "pengajuan.active = 'Y' AND mahasiswa.active = 'Y' AND perusahaan.active = 'Y' AND pengajuan.idMahasiswa = $idReference";
+		$where = "pengajuan.active = 'Y' AND perusahaan.active = 'Y' AND pengajuan.idMahasiswa = $idReference";
 		$this->db->where($where);
 		$query = $this->db->get();
 		return $query->num_rows();

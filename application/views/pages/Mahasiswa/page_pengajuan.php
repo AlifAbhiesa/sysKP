@@ -58,10 +58,15 @@
             <div class="modal-body">
 
 
-                <div class="form-group">
+               <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Perusahaan</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="id_bimbingan" placeholder="Id_Bimbingan ...">
+                        <label>ID Perusahaan</label>
+                        <select style="border-top: none; border-left: none; border-right: none" class="form-control" id="idPerusahaan">
+                            <option> ---- Pick ----</option>
+                        <?php foreach ($list_perusahaan as $row) : ?>
+                           <option value="<?php echo $row['idPerusahaan'] ?>"> <?php echo $row['namaPerusahaan'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 

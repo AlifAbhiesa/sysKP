@@ -97,4 +97,10 @@ class Dosen_model extends CI_Model
 
 		return $this->db->get()->result_array();
 	}
+
+	public function getAllDosen(){
+		$this->db->select('*');
+		$this->db->from('dosen');
+		return $this->db->get()->result_array();
+	}
 }

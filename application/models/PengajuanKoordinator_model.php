@@ -6,12 +6,12 @@
  * Time: 13.55
  */
 
-class Perusahaan_model extends CI_Model
+class PengajuanKoordinator_model extends CI_Model
 {
 
-	var $table = 'perusahaan'; //nama tabel dari database
-	var $column_search = array('namaPerusahaan'); //field yang diizin untuk pencarian
-	var $order = array('idPerusahaan' => 'DESC'); // default order
+	var $table = 'pengajuan'; //nama tabel dari database
+	var $column_search = array('tglProposal','namaPerusahaan'); //field yang diizin untuk pencarian
+	var $order = array('idPengajuan' => 'DESC'); // default order
 
 	public function __construct()
 	{
@@ -59,20 +59,26 @@ class Perusahaan_model extends CI_Model
 		}
 	}
 
-	function get_datatables()
+	function get_datatables($idReference)
 	{
 		$this->_get_datatables_query();
 		if($_POST['length'] != -1)
 			$this->db->limit($_POST['length'], $_POST['start']);
-		$this->db->where(array('active' => 'Y'));
+		$this->db->select('pengajuan.idPengajuan,perusahaan.namaPerusahaan, pengajuan.approveWali,pengajuan.approvePerusahaan, pengajuan.approveKoordinator, pengajuan.buktiApproval');
+		$this->db->join('perusahaan','perusahaan.idPerusahaan = pengajuan.idPerusahaan','LEFT');
+		$where = "pengajuan.active = 'Y' AND perusahaan.active = 'Y' AND pengajuan.idMahasiswa = $idReference";
+		$this->db->where($where);
 		$query = $this->db->get();
 		return $query->result();
 	}
 
-	function count_filtered()
+	function count_filtered($idReference)
 	{
 		$this->_get_datatables_query();
-		$this->db->where(array('active' => 'Y'));
+		$this->db->select('pengajuan.idPengajuan,perusahaan.namaPerusahaan, pengajuan.approveWali,pengajuan.approvePerusahaan, pengajuan.approveKoordinator, pengajuan.buktiApproval');
+		$this->db->join('perusahaan','perusahaan.idPerusahaan = pengajuan.idPerusahaan','LEFT');
+		$where = "pengajuan.active = 'Y' AND perusahaan.active = 'Y' AND pengajuan.idMahasiswa = $idReference";
+		$this->db->where($where);
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -82,23 +88,23 @@ class Perusahaan_model extends CI_Model
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
-
+	
 	//insert code here !
 	public function addData($data){
-		$this->db->insert('perusahaan', $data);
+		$this->db->insert('pengajuan', $data);
+		return $this->db->affected_rows();
+		
+	}
+		public function updateData($id, $data){
+		$this->db->where('idPengajuan', $id);
+		$this->db->update('pengajuan', $data);
 		return $this->db->affected_rows();
 
 	}
-	public function updateData($idPerusahaan, $data){
-		$this->db->where('idPerusahaan', $idPerusahaan);
-		$this->db->update('perusahaan', $data);
-		return $this->db->affected_rows();
-	}
-	
-	public function getOne($idPerusahaan){
+	public function getOne($id){
 		$this->db->select('*');
-		$this->db->from('perusahaan');
-		$this->db->where(array('idPerusahaan' => $idPerusahaan));
+		$this->db->from('pengajuan');
+		$this->db->where(array('id' => $id));
 		
 		return $this->db->get()->result_array();
 		
@@ -109,5 +115,4 @@ public function getAllPerusahaan(){
 		$this->db->from('perusahaan');
 		return $this->db->get()->result_array();
 	}
-
 }

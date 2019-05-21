@@ -50,7 +50,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <label class="border-bottom border-gray pb-2">Ajuak Kerja Praktek</label>
+                <label class="border-bottom border-gray pb-2">Ajukan Kerja Praktek</label>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>
@@ -71,10 +71,15 @@
                 </div>
 
 
-                <div class="form-group">
+                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Materi</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="materi" placeholder="Materi ...">
+                        <label>ID Dosen</label>
+                        <select style="border-top: none; border-left: none; border-right: none" class="form-control" id="idDosen">
+                            <option> ---- Pick ----</option>
+                        <?php foreach ($list_dosen as $dsn) : ?>
+                           <option value="<?php echo $dsn['idDosen'] ?>"> <?php echo $dsn['nama'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
 

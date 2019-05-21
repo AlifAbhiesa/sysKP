@@ -110,4 +110,9 @@ class Pengajuan_model extends CI_Model
 		
 	}
 
+public function getAllPerusahaan(){
+		$this->db->select('*');
+		$this->db->from('perusahaan');
+		return $this->db->get()->result_array();
+	}
 }

@@ -12,7 +12,10 @@ class Pengajuan extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('PengajuanWali_model');
+		$this->load->model('PengajuanKoordinator_model');
+		$this->load->model('Perusahaan_model');
 		$this->load->model('Pengajuan_model');
+		$this->load->model('Dosen_model');
 		$this->load->library('session');
 	}
 
@@ -21,6 +24,8 @@ class Pengajuan extends CI_Controller
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
 			$data = array('isi' => 'pages/mahasiswa/page_pengajuan', 'title' => 'Pengajuan');
+			$data['list_perusahaan'] = $this->Pengajuan_model->getAllPerusahaan();
+			$data['list_dosen'] = $this->Dosen_model->getAllDosen();
 			$this->load->view('layout/wrapper', $data);
 		} else {
 			$this->load->view('pages/page_login');

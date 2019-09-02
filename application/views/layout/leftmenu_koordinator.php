@@ -39,7 +39,8 @@
                         echo 'active';
                     } ?> nav-item">
             <a class="nav-link" href="<?php echo base_url() ?>KP">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Kerja Praktek</span>
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Kerja Praktek</span> 
+               
             </a>
         </li>
 

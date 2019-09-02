@@ -55,7 +55,12 @@
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Id Kerja Praktek</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="idKerjaPraktek1" placeholder="Id Kerja Praktek ...">
+						<select style="border-top: none; border-left: none; border-right: none" class="form-control" id="Id Kerja Praktek">
+                            <option> ---- Pick ----</option>
+                        <?php foreach ($list_perusahaan as $row) : ?>
+                           <option value="<?php echo $row['Id Kerja Praktek'] ?>"> <?php echo $row['namaPerusahaan'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
 					</div>
 				</div>
 

@@ -30,7 +30,7 @@
 			echo 'active';
 		}?> nav-item">
 			<a class="nav-link" href="<?php echo base_url()?>Bimbingan" >
-				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Mahasiswa Bimbingan</span>
+				<i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp; Bimbingan</span>
 			</a>
 		</li>
 

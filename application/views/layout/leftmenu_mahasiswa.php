@@ -38,7 +38,7 @@
                         echo 'active';
                     } ?> nav-item">
             <a class="nav-link" href="<?php echo base_url() ?>Bimbingan/bimbinganView">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Bimbingan</span>
+                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;mahasiswa Bimbingan</span>
             </a>
         </li>
 
@@ -46,7 +46,7 @@
                         echo 'active';
                     } ?> nav-item">
             <a class="nav-link" href="<?php echo base_url() ?>Sidangkp">
-                <i class="menu-icon fa fa-user" style="color: #3c8dbc"></i> <span>&ensp;Jadwal Sidang</span>
+               
             </a>
         </li>
 

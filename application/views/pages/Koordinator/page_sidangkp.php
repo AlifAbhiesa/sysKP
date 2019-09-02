@@ -21,14 +21,10 @@
 					<table class="table table-bordered table-primary dt-responsive" id="myData" width="100%" >
 						<thead class="thead-dark">
 						<tr>
-							<th>No</th>
-							<th>Judul Kp</th>
-							<th>NRP</th>
-							<th>Nama</th>
-							<th>Tanggal Sidang</th>
+						<td><th>Tanggal Sidang
+						</th>
 							<th>Penguji</th>
-							<th>Nilai</th>
-							<th>Action</th>
+							<th>Nilai</th></td>
 						</tr>
 						</thead>
 					</table>
@@ -58,44 +54,37 @@
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
-						<label>Judul Kp</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="judulKP" placeholder="Judul KP ...">
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>NRP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="NRP ...">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Nama</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="md-input-wrapper">
 						<label>Tanggal Sidang</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="tglSidang" placeholder="Tanggal sidang ...">
+						<select style="border-top: none; border-left: none; border-right: none" class="form-control" id="tanggal sidang">
+                            <option> ---- Pick ----</option>
+							<?php foreach ($list_perusahaan as $row) : ?>
+                           <option value="<?php echo $row['Tanggal Sidang'] ?>"> <?php echo $row['Tanggal Sidang'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Penguji</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="penguji" placeholder="Penguji ...">
+						<select style="border-top: none; border-left: none; border-right: none" class="form-control" id="penguji">
+                            <option> ---- Pick ----</option>
+							<?php foreach ($list_perusahaan as $row) : ?>
+                           <option value="<?php echo $row['penguji'] ?>"> <?php echo $row['penguji'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Nilai</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nilai" placeholder="Nilai ...">
+						<select style="border-top: none; border-left: none; border-right: none" class="form-control" id="nilai">
+                            <option> ---- Pick ----</option>
+							<?php foreach ($list_perusahaan as $row) : ?>
+                           <option value="<?php echo $row['nilai'] ?>"> <?php echo $row['nilai'] ?></option>
+                        <?php endforeach; ?>
+                        </select>
 					</div>
 				</div>
 			</div>
@@ -123,32 +112,12 @@
 			<div class="modal-body">
 
 
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Judul Kp</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updjudulKP" placeholder="Judul KP ...">
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>NRP</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="NRP ...">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="md-input-wrapper">
-						<label>Nama</label>
-						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnama" placeholder="nama ...">
-					</div>
-				</div>
-
+				
 				<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Tanggal Sidang</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updtglSidang" placeholder="Tanggal sidang ...">
+	
 					</div>
 				</div>
 
@@ -210,9 +179,6 @@
 
 	function AddData() {
 
-		var judulKP = document.getElementById("judulKP").value;
-		var nrp = document.getElementById("nrp").value;
-		var nama = document.getElementById("nama").value;
 		var tglSidang = document.getElementById("tglSidang").value;
 		var penguji = document.getElementById("penguji").value;
 		var nilai = document.getElementById("nilai").value;
@@ -221,9 +187,6 @@
 			url: "<?php echo base_url('Sidangkp/addData'); ?>",
 			type: "post",
 			data: {
-				judulKP:judulKP,
-				nrp:nrp,
-				nama:nama,
 				tglSidang:tglSidang,
 				penguji:penguji,
 				nilai:nilai,
@@ -285,10 +248,6 @@
 	}
 	function updateData() {
 
-		var judulKP = document.getElementById("updjudulKP").value;
-		var id = document.getElementById("idSidangkp").value;
-	    var nrp = document.getElementById("updnrp").value;
-		var nama = document.getElementById("updnama").value;
 		var tglSidang = document.getElementById("updtglSidang").value;
 		var penguji = document.getElementById("updpenguji").value;
 		var nilai = document.getElementById("updnilai").value;
@@ -297,10 +256,6 @@
 			url: "<?php echo base_url('Sidangkp/updateData'); ?>",
 			type: "post",
 			data: {
-				judulKP:judulKP,
-				id:id,
-				nrp:nrp,
-				nama:nama,
 				tglSidang:tglSidang,
 				penguji:penguji,
 				nilai:nilai,

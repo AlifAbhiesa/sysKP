@@ -23,16 +23,17 @@
                             <tr>
                                 <th>No</th>
                                 <th>ID Dosen Wali</th>
-                                <th>NRP</th>
                                 <th>Nama</th>
+                                <th>Nrp</th>
                                 <th>No HP</th>
-                                <th>Transkrip</th>
+                               
                                 <th>Action</th>
                             </tr>
                         </thead>
                     </table>
                     <br>
-                    <button type="button" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#AddModal">
+                   
+            <div class= <button type="button" class="btn btn-success" style="width: 100%;" data-toggle="modal" data-target="#AddModal">
                         Add New Mahasiswa
                     </button>
                 </div>
@@ -70,14 +71,14 @@
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Nama</label>
+                        <label>nama</label>
                         <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nama" placeholder="nama ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>NRP</label>
+                        <label>Nrp</label>
                         <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="nrp" placeholder="nomer registrasi pokok ...">
                     </div>
                 </div>
@@ -89,15 +90,9 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <div class="md-input-wrapper">
-                        <label>Transkrip</label>
-                        <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="transkrip" placeholder="transkrip ...">
-                    </div>
-                </div>
+               
 
-            </div>
-            <div class="modal-footer">
+            </div>"modal-footer">
                 <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close
                 </button>
                 <button onclick="AddData()" type="button" class="btn btn-outline">Simpan
@@ -135,14 +130,14 @@
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>Nama</label>
+                        <label>nrp</label>
                         <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnama" placeholder="nama ...">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="md-input-wrapper">
-                        <label>NRP</label>
+                        <label>nama</label>
                         <input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updnrp" placeholder="nomer registrasi pokok ...">
                     </div>
                 </div>
@@ -218,8 +213,8 @@
             type: "post",
             data: {
                 idDosenWali: idDosenWali,
+               nrp: nrp,
                 nama: nama,
-                nrp: nrp,
                 nohp: nohp,
                 transkrip: transkrip,
             },

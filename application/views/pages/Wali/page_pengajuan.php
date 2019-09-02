@@ -24,19 +24,18 @@
                                 <th rowspan="2">No</th>
                                 <th rowspan="2" style="text-align: center">NRP</th>
                                 <th rowspan="2" style="text-align: center">Nama</th>
-                                <th rowspan="2" style="text-align: center">Perusahaan</th>
-                                <th colspan="3" style="text-align: center">Tanggal</th>
-                                <th colspan="3" style="text-align: center">Aproval</th>
-                                <th rowspan="2" style="text-align: center">Action</th>
+                                
+                              
+                                <th colspan="4" style="text-align: center">Aproval</th>
+                               
                             </tr>
 
 							<tr>
-								<th style="text-align: center">Proposal</th>
-								<th style="text-align: center">Muali KP</th>
-								<th style="text-align: center">Selesai KP</th>
+								
+                                <th style="text-align: center">Perusahaan</th>
 
 								<th style="text-align: center">Wali</th>
-								<th style="text-align: center">Perusahaan</th>
+								
 								<th style="text-align: center">Koordinator</th>
 							</tr>
                         </thead>
@@ -58,7 +57,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <label class="border-bottom border-gray pb-2">Ajuak Kerja Praktek</label>
+                <label class="border-bottom border-gray pb-2">Ajukan Kerja Praktek</label>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"></h4>

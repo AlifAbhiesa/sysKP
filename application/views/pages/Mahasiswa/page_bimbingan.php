@@ -86,9 +86,7 @@
 				<h4 class="modal-title"></h4>
 			</div>
 			<div class="modal-body">
-
-
-				<div class="form-group">
+					<div class="form-group">
 					<div class="md-input-wrapper">
 						<label>Id kerja Praktek</label>
 						<input style="border-top: none; border-left: none; border-right: none" type="text" class="form-control" id="updidKerjaPraktek1" placeholder="Id Kerja Praktek...">

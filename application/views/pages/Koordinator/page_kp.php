@@ -14,6 +14,7 @@
 			<div class="card-body">
 				<div class="box-header">
 					<h3 class="box-title">User Kerja Praktek</h3>
+				
 					<hr>
 				</div>
 				<div class="box-body">
